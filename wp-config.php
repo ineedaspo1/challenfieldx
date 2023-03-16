@@ -1,10 +1,5 @@
 <?php
 
-// BEGIN iThemes Security - Do not modify or remove this line
-// iThemes Security Config Details: 2
-define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
-// END iThemes Security - Do not modify or remove this line
-
 /**
  * The base configuration for WordPress
  *
@@ -27,13 +22,13 @@ define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settin
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wwwchallengess' );
+define( 'DB_NAME', 'challengess' );
 
 /** Database username */
-define( 'DB_USER', 'wwwchallengess' );
+define( 'DB_USER', 'challengess' );
 
 /** Database password */
-define( 'DB_PASSWORD', '4wOwO08R8qQqLsgItWZPvk9W' );
+define( 'DB_PASSWORD', '13KPsDieOFOgxYUdCToroPUU' );
 
 /** Database hostname */
 define( 'DB_HOST', 'ls-96c030164f6fe533ab584965faa5449280eac2d2.c15l9m3qhl8e.us-east-1.rds.amazonaws.com:3306' );
