@@ -9,3 +9,5 @@ wp-content/plugins/wpai-acf-add-on
 
 # Ignore LearnPress prerequisites courses
 wp-content/plugins/learnpress-prerequisites-courses
+wp-content/plugins/learnpress-frontend-editor
+wp-content/plugins/learnpress-import-export
