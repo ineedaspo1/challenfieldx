@@ -1,0 +1,27 @@
+
+    Directory: C:\Users\spo\Downloads\public\challenfieldx\wp-content\plugins
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----            3/6/2023  1:37 PM                advanced-custom-fields-pro
+d----            3/6/2023  1:16 AM                contact-form-7
+d----            3/6/2023  1:17 AM                custom-post-type-ui
+d----            3/6/2023  1:15 AM                elementor
+d----            3/6/2023  1:14 AM                elementor-pro
+d----            3/6/2023  3:57 PM                fluent-support
+d----            3/6/2023  3:57 PM                fluent-support-pro
+d----            3/6/2023  6:06 PM                ithemes-security-pro
+d----            3/6/2023  1:16 AM                learnpress
+d----            3/6/2023  6:59 PM                learnpress-paid-membership-pro
+d----            3/6/2023  7:00 PM                learnpress-prerequisites-courses
+d----            3/6/2023  1:12 AM                limit-login-attempts-reloaded
+d----            3/6/2023  7:00 PM                paid-memberships-pro
+d----            3/6/2023  1:12 AM                spinupwp
+d----            3/6/2023  1:15 AM                thim-core
+d----            3/6/2023  1:16 AM                tp-portfolio
+d----            3/6/2023  4:10 PM                wp-all-import-pro
+d----            3/6/2023  4:11 PM                wpai-acf-add-on
+-a---            3/6/2023  1:15 AM              5 .installer.txt
+-a---           3/16/2023  2:23 AM              0 files.txt
+-a---            3/6/2023  1:12 AM             28 index.php
+

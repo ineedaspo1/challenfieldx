@@ -1,0 +1,11 @@
+# Ignore specific WordPress plugins
+wp-content/plugins/contact-form-7
+wp-content/plugins/custom-post-type-ui
+wp-content/plugins/fluent-support
+wp-content/plugins/fluent-support-pro
+wp-content/plugins/ithemes-security-pro
+wp-content/plugins/wp-all-import-pro
+wp-content/plugins/wpai-acf-add-on
+
+# Ignore LearnPress prerequisites courses
+wp-content/plugins/learnpress-prerequisites-courses
