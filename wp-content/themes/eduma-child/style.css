@@ -1,0 +1,134 @@
+/*
+ Theme Name:   Eduma Child
+ Theme URI:    http://educationwp.thimpress.com/
+ Description:  Eduma Child Theme
+ Author:       ThimPress
+ Author URI:   http://thimpress.com
+ Template:     eduma
+ Version:      1.0.0
+ Text Domain:  eduma-child
+*/
+
+
+img.testimonial_img {
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.testimonial_wrapper {
+    display: flex;
+}
+.field_carousel .swiper-slide{
+    background:transparent;
+}
+.elementor-17 .elementor-element.elementor-element-d9b4ddd .swiper-slide > .elementor-element{
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 40px 40px 0px rgba(0, 0, 0, 0.1);
+    padding:10px;
+}
+.testimonial_container .testimonial_content{
+    word-break: break-word;
+    color: #757F88;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+    margin-top: 20px;
+}
+.testimonial_wrapper div{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.testimonial_wrapper div i{
+    text-align: right;
+    color: #757F88;
+    width: 1em;
+    height: 1em;
+    font-size: 36px;
+}
+.testimonial_wrapper div h4{
+    color: #000;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: "DM Sans", sans-serif;
+}
+.course_meta{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 0 8px;
+}
+.course_meta .course_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.course_info i {
+	font-size: 16px;
+	line-height: 16px;
+    color: rgba(8, 8, 8, 0.25);
+    margin-right: 5px;
+}
+.course_info p{
+	font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(8, 8, 8, 0.75);
+}
+.course_btn{
+    font-family: "Roboto", Sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    border: 1px solid #0A2540;
+    color: #0A2540;
+    padding: 10px 24px 10px 24px;
+    border-radius: 10px;
+    background: #FAFAFA;
+    margin:0 6px;
+}
+.course_btn span{
+    margin-right: 6px;
+}
+.course_meta {
+    padding-bottom:30px
+}
+.testimonial_wrapper{
+    height:113px
+}
+
+ .testimonial_wrapper .testimonial_img{     max-width: 113px;
+    width: 100%;
+}
+
+.single-lp_course .elementor-widget-wrap.elementor-element-populated {
+    padding-bottom: 35px !important;
+}
+
+form.auto_login {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+#thim-popup-login .thim-login-container p{
+    width: 100%;
+}
+p.fname {
+     order: -2;
+}
+
+p.lname {
+    order: -1;
+}
+.thim-login .title, .thim-register .title {
+    padding-top: 5px;
+}
