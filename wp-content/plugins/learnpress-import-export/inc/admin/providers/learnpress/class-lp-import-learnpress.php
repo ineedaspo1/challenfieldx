@@ -71,7 +71,7 @@ if ( ! class_exists( 'LP_Import_LearnPress_Provider' ) ) {
 		 */
 		public function __construct() {
 
-			if ( isset( $_REQUEST['lpie_import_course_data'] ) ) {
+			if ( ! empty( LP_Request::get_param('lpie_import_course_data') ) ) {
 				add_action( 'lpie_import_view_step_1', array( $this, 'step_1' ) );
 				add_action( 'lpie_import_view_step_2', array( $this, 'step_2' ) );
 				add_action( 'lpie_import_view_step_3', array( $this, 'step_3' ) );

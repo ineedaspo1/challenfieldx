@@ -178,20 +178,8 @@ class Thim_Elementor_Extend {
 	}
 
 	public function thim_load_font_icon() {
-		/**
-		 * @var WP_Filesystem_Base $wp_filesystem
-		 */
-		global $wp_filesystem;
-
-		if ( empty( $wp_filesystem ) ) {
-			require_once ABSPATH . '/wp-admin/includes/file.php';
-			WP_Filesystem();
-		}
-
-		$icon_widgets = $wp_filesystem->get_contents( THIM_URI . '/assets/fonts/icons.json' );
-		$icon         = json_decode( $icon_widgets, true );
-
-		return $icon;
+  	    $icon = include THIM_DIR . 'inc/widgets/icons.php';
+ 		return $icon;
 	}
 
 	function thim_review_meta_data_widget_course( $opt ) {

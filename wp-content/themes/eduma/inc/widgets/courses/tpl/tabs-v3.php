@@ -1,6 +1,5 @@
 <?php
 
-global $post, $wpdb;
 $random     = rand( 1, 99 );
 $limit_tab  = $instance['tabs-options']['limit_tab'] ? $instance['tabs-options']['limit_tab'] : 4;
 $cat_id_tab = $instance['tabs-options']['cat_id_tab'] ? $instance['tabs-options']['cat_id_tab'] : array();
@@ -73,8 +72,9 @@ if ( ! empty( $cat_id_tab ) ) {
 								<?php learn_press_courses_loop_item_instructor(); ?>
 								<?php
 								the_title( sprintf( '<h2 class="course-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-								 
+
 								do_action( 'learnpress_loop_item_course_meta' );
+
 								}
 							?>
 						</div>

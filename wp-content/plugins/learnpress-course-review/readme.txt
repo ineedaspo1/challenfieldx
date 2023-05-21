@@ -5,7 +5,7 @@ Tags: lms, elearning, e-learning, learning management system, education, course,
 Requires at least: 5.8
 Requires PHP: 7.0
 Tested up to: 6.1.1
-Stable tag: 4.0.6
+Stable tag: 4.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Course Review screenshot.
 
 == Changelog ==
+= 4.0.8 (2023-05-03) =
+~ Fixed: Review per page change from 1 item to 5 item
+
+= 4.0.7 (2023-03-24) =
+~ Fixed: minor bug.
+~ Updated: translation file po.
 
 = 4.0.6 (2023-03-15) =
 ~ Optimize.

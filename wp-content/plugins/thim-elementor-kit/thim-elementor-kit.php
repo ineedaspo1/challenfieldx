@@ -3,10 +3,10 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.1.1
+ * Version: 1.1.3
  * Author URI: http://thimpress.com
  * Requires at least: 5.2
- * Tested up to: 6.1
+ * Tested up to: 6.2
  * Requires PHP: 7.0
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIM_EKIT_VERSION', '1.1.1' );
+define( 'THIM_EKIT_VERSION', '1.1.3' );
 define( 'THIM_EKIT_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'THIM_EKIT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'THIM_EKIT_PLUGIN_FILE', __FILE__ );

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.1.0\n"
+"Project-Id-Version: Thim Elementor Kit 1.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/thim-elementor-kit\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-02-27T14:18:45+03:00\n"
+"POT-Creation-Date: 2023-04-17T06:11:50+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: thim-elementor-kit\n"
@@ -651,11 +651,11 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:62
 #: inc/elementor/widgets/global/minicart/minicart.php:72
 #: inc/elementor/widgets/global/product-base/product-base.php:136
-#: inc/elementor/widgets/global/slider/slider.php:95
-#: inc/elementor/widgets/global/slider/slider.php:108
-#: inc/elementor/widgets/global/slider/slider.php:125
-#: inc/elementor/widgets/global/slider/slider.php:140
-#: inc/elementor/widgets/global/slider/slider.php:171
+#: inc/elementor/widgets/global/slider/slider.php:131
+#: inc/elementor/widgets/global/slider/slider.php:144
+#: inc/elementor/widgets/global/slider/slider.php:161
+#: inc/elementor/widgets/global/slider/slider.php:176
+#: inc/elementor/widgets/global/slider/slider.php:207
 #: inc/elementor/widgets/global/testimonial/testimonial.php:71
 #: inc/elementor/widgets/global/testimonial/testimonial.php:156
 #: inc/elementor/widgets/global/testimonial/testimonial.php:328
@@ -685,11 +685,11 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:63
 #: inc/elementor/widgets/global/minicart/minicart.php:73
 #: inc/elementor/widgets/global/product-base/product-base.php:137
-#: inc/elementor/widgets/global/slider/slider.php:96
-#: inc/elementor/widgets/global/slider/slider.php:109
-#: inc/elementor/widgets/global/slider/slider.php:126
-#: inc/elementor/widgets/global/slider/slider.php:141
-#: inc/elementor/widgets/global/slider/slider.php:172
+#: inc/elementor/widgets/global/slider/slider.php:132
+#: inc/elementor/widgets/global/slider/slider.php:145
+#: inc/elementor/widgets/global/slider/slider.php:162
+#: inc/elementor/widgets/global/slider/slider.php:177
+#: inc/elementor/widgets/global/slider/slider.php:208
 #: inc/elementor/widgets/global/testimonial/testimonial.php:72
 #: inc/elementor/widgets/global/testimonial/testimonial.php:157
 #: inc/elementor/widgets/global/testimonial/testimonial.php:329
@@ -776,7 +776,7 @@ msgstr ""
 #: inc/elementor/widgets/global/login-form/login-form.php:649
 #: inc/elementor/widgets/global/minicart/minicart.php:80
 #: inc/elementor/widgets/global/minicart/minicart.php:1525
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:72
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:74
 #: inc/elementor/widgets/global/product-base/product-base.php:349
 #: inc/elementor/widgets/global/product-base/product-base.php:942
 #: inc/elementor/widgets/global/product-base/product-base.php:1601
@@ -828,7 +828,7 @@ msgstr ""
 #: inc/elementor/widgets/global/login-form/login-form.php:657
 #: inc/elementor/widgets/global/minicart/minicart.php:88
 #: inc/elementor/widgets/global/minicart/minicart.php:1533
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:80
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:82
 #: inc/elementor/widgets/global/product-base/product-base.php:324
 #: inc/elementor/widgets/global/product-base/product-base.php:357
 #: inc/elementor/widgets/global/product-base/product-base.php:950
@@ -941,7 +941,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:295
 #: inc/elementor/widgets/global/minicart/minicart.php:718
 #: inc/elementor/widgets/global/minicart/minicart.php:1204
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:455
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:457
 #: inc/elementor/widgets/global/product-base/product-base.php:833
 #: inc/elementor/widgets/global/product-base/product-base.php:878
 #: inc/elementor/widgets/global/product-base/product-base.php:1293
@@ -1046,9 +1046,9 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:168
 #: inc/elementor/widgets/global/minicart/minicart.php:739
 #: inc/elementor/widgets/global/minicart/minicart.php:1192
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:207
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:281
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:418
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:209
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:283
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:420
 #: inc/elementor/widgets/global/product-base/product-base.php:384
 #: inc/elementor/widgets/global/product-base/product-base.php:809
 #: inc/elementor/widgets/global/product-base/product-base.php:969
@@ -1097,8 +1097,8 @@ msgstr ""
 #: inc/elementor/widgets/global/login-form/login-form.php:436
 #: inc/elementor/widgets/global/login-form/login-form.php:720
 #: inc/elementor/widgets/global/login-popup/login-popup.php:220
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:254
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:406
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:256
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:408
 #: inc/elementor/widgets/global/search-form/search-form.php:404
 #: inc/elementor/widgets/global/social/social.php:449
 #: inc/elementor/widgets/global/tab/tab.php:377
@@ -1313,8 +1313,8 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:897
 #: inc/elementor/widgets/global/minicart/minicart.php:1263
 #: inc/elementor/widgets/global/minicart/minicart.php:1401
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:139
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:311
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:141
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:313
 #: inc/elementor/widgets/global/product-base/product-base.php:707
 #: inc/elementor/widgets/global/product-base/product-base.php:1345
 #: inc/elementor/widgets/global/product-base/product-base.php:1500
@@ -1365,8 +1365,8 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart/minicart.php:917
 #: inc/elementor/widgets/global/minicart/minicart.php:1307
 #: inc/elementor/widgets/global/minicart/minicart.php:1446
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:162
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:333
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:164
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:335
 #: inc/elementor/widgets/global/product-base/product-base.php:762
 #: inc/elementor/widgets/global/product-base/product-base.php:1403
 #: inc/elementor/widgets/global/product-base/product-base.php:1542
@@ -1396,8 +1396,8 @@ msgstr ""
 #: inc/elementor/widgets/global/accordion/accordion.php:351
 #: inc/elementor/widgets/global/list-course/list-course.php:367
 #: inc/elementor/widgets/global/list-product/list-product.php:305
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:184
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:354
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:186
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:356
 #: inc/elementor/widgets/global/product-base/product-base.php:1764
 #: inc/elementor/widgets/global/tab/tab.php:449
 #: inc/elementor/widgets/global/testimonial/testimonial.php:1199
@@ -1502,7 +1502,7 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion/image-accordion.php:348
 #: inc/elementor/widgets/global/list-course/list-course.php:355
 #: inc/elementor/widgets/global/list-course/list-course.php:397
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:387
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:389
 #: inc/elementor/widgets/global/social/social.php:240
 #: inc/elementor/widgets/global/social/social.php:294
 #: inc/elementor/widgets/global/tab/tab.php:442
@@ -1775,8 +1775,8 @@ msgstr ""
 #: inc/elementor/widgets/global/login-form/login-form.php:493
 #: inc/elementor/widgets/global/login-form/login-form.php:676
 #: inc/elementor/widgets/global/login-popup/login-popup.php:275
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:118
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:246
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:120
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:248
 #: inc/elementor/widgets/global/social/social.php:495
 #: inc/elementor/widgets/global/video/video.php:280
 #: inc/elementor/widgets/single-product/product-additional-information/product-additional-information.php:75
@@ -1818,7 +1818,7 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7/contact-form-7.php:479
 #: inc/elementor/widgets/global/contact-form-7/contact-form-7.php:530
 #: inc/elementor/widgets/global/minicart/minicart.php:731
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:496
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:498
 #: inc/elementor/widgets/global/team/team.php:475
 #: inc/elementor/widgets/global/team/team.php:502
 #: inc/elementor/widgets/global/testimonial/testimonial.php:1189
@@ -2118,7 +2118,7 @@ msgstr ""
 #: inc/elementor/widgets/global/categories/categories.php:69
 #: inc/elementor/widgets/global/login-form/login-form.php:177
 #: inc/elementor/widgets/global/product-base/product-base.php:174
-#: inc/elementor/widgets/global/slider/slider.php:155
+#: inc/elementor/widgets/global/slider/slider.php:191
 #: inc/elementor/widgets/global/social/social.php:509
 #: inc/elementor/widgets/global/testimonial/testimonial.php:400
 #: inc/elementor/widgets/single-post/author-box/author-box.php:48
@@ -2752,7 +2752,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/icon-box/icon-box.php:162
 #: inc/elementor/widgets/global/icon-box/icon-box.php:205
-#: inc/elementor/widgets/global/slider/slider.php:157
+#: inc/elementor/widgets/global/slider/slider.php:193
 #: inc/elementor/widgets/global/testimonial/testimonial.php:402
 #: inc/utilities/group-control-trait.php:175
 msgid "Number"
@@ -3609,84 +3609,84 @@ msgstr ""
 msgid "Justified"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:19
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:20
 msgid "Nav Menu"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:40
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:41
 msgid "--Select Menu--"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:56
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:58
 msgid "Nav Menu Settings"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:63
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:65
 msgid "Select Menu"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:76
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:78
 msgid "start"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:84
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:86
 msgid "end"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:109
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:111
 msgid "Menu item"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:126
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:128
 msgid "Menu Item"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:146
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:318
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:148
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:320
 msgid "Text color"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:169
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:171
 msgid "Item text color"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:191
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:193
 msgid "Item text color (Active)"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:237
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:239
 msgid "Submenu item"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:340
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:342
 msgid "Text color (hover)"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:361
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:363
 msgid "Text color (Active)"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:377
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:379
 msgid "Sub Menu Items Border"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:399
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:401
 msgid "Submenu panel"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:437
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:439
 msgid "Panel Menu Border"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:446
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:448
 msgid "Container background"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:481
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:483
 msgid "Container width"
 msgstr ""
 
-#: inc/elementor/widgets/global/nav-menu/nav-menu.php:538
+#: inc/elementor/widgets/global/nav-menu/nav-menu.php:544
 msgid "Menu"
 msgstr ""
 
@@ -3941,65 +3941,79 @@ msgid "Settings Slider"
 msgstr ""
 
 #: inc/elementor/widgets/global/slider/slider.php:80
+msgid "Show Item"
+msgstr ""
+
+#: inc/elementor/widgets/global/slider/slider.php:92
+msgid "Scroll Item"
+msgstr ""
+
+#: inc/elementor/widgets/global/slider/slider.php:104
+#: inc/elementor/widgets/global/testimonial/testimonial.php:297
+#: inc/utilities/group-control-trait.php:81
+msgid "Item Space"
+msgstr ""
+
+#: inc/elementor/widgets/global/slider/slider.php:116
 #: inc/elementor/widgets/global/testimonial/testimonial.php:313
 #: inc/utilities/group-control-trait.php:98
 msgid "Speed"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:93
+#: inc/elementor/widgets/global/slider/slider.php:129
 #: inc/elementor/widgets/global/testimonial/testimonial.php:326
 #: inc/utilities/group-control-trait.php:111
 msgid "Autoplay"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:106
+#: inc/elementor/widgets/global/slider/slider.php:142
 #: inc/elementor/widgets/global/testimonial/testimonial.php:339
 #: inc/utilities/group-control-trait.php:124
 msgid "Pause on Interaction"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:122
+#: inc/elementor/widgets/global/slider/slider.php:158
 #: inc/elementor/widgets/global/testimonial/testimonial.php:355
 #: inc/utilities/group-control-trait.php:140
 msgid "Pause on Hover"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:138
+#: inc/elementor/widgets/global/slider/slider.php:174
 #: inc/elementor/widgets/global/testimonial/testimonial.php:384
 #: inc/utilities/group-control-trait.php:156
 msgid "Show Arrow"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:151
+#: inc/elementor/widgets/global/slider/slider.php:187
 #: inc/elementor/widgets/global/testimonial/testimonial.php:396
 #: inc/utilities/group-control-trait.php:169
 msgid "Pagination Options"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:156
+#: inc/elementor/widgets/global/slider/slider.php:192
 #: inc/elementor/widgets/global/testimonial/testimonial.php:401
 #: inc/utilities/group-control-trait.php:174
 msgid "Bullets"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:158
+#: inc/elementor/widgets/global/slider/slider.php:194
 #: inc/elementor/widgets/single-product/product-stock/product-stock.php:210
 #: inc/utilities/group-control-trait.php:176
 msgid "Progress"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:159
+#: inc/elementor/widgets/global/slider/slider.php:195
 #: inc/utilities/group-control-trait.php:177
 msgid "Scrollbar"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:160
+#: inc/elementor/widgets/global/slider/slider.php:196
 #: inc/elementor/widgets/global/testimonial/testimonial.php:405
 #: inc/utilities/group-control-trait.php:178
 msgid "Fraction"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider/slider.php:169
+#: inc/elementor/widgets/global/slider/slider.php:205
 #: inc/elementor/widgets/global/testimonial/testimonial.php:417
 #: inc/utilities/group-control-trait.php:187
 msgid "Enable Loop?"
@@ -4370,11 +4384,6 @@ msgstr ""
 #: inc/elementor/widgets/global/testimonial/testimonial.php:281
 #: inc/utilities/group-control-trait.php:68
 msgid "Item Scroll"
-msgstr ""
-
-#: inc/elementor/widgets/global/testimonial/testimonial.php:297
-#: inc/utilities/group-control-trait.php:81
-msgid "Item Space"
 msgstr ""
 
 #: inc/elementor/widgets/global/testimonial/testimonial.php:371
@@ -5212,10 +5221,6 @@ msgstr ""
 #: inc/modules/slider/class-taxonomy-metabox.php:30
 #: inc/modules/slider/class-taxonomy-metabox.php:56
 msgid "Carousel"
-msgstr ""
-
-#: inc/upgrade/class-init.php:75
-msgid "Thim Elementor Kit is updating the database in the background."
 msgstr ""
 
 #: inc/utilities/group-control-trait.php:601

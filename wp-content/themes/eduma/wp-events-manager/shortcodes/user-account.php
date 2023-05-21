@@ -41,7 +41,7 @@ if ( $query->have_posts() ) : ?>
                 <td class="id"><?php printf( '%s', wpems_format_ID( $post->ID ) ); ?></td>
                 <td><?php printf( '<a href="%s">%s</a>', get_the_permalink( $booking->event_id ), get_the_title( $booking->event_id ) ); ?></td>
                 <td class="type"><?php printf( '%s', floatval( $booking->cost ) == 0 ? __( 'Free', 'eduma' ) : __( 'Cost', 'eduma' ) ); ?></td>
-                <td><?php printf( '%s', wpems_format_price( floatval( $booking->cost ), $booking->currency ) ); ?></td>
+                <td><?php printf( '%s', wpems_format_price( floatval( $booking->price ), $booking->currency ) ); ?></td>
                 <td class="quantity"><?php printf( '%s', $booking->qty ); ?></td>
                 <td class="method"><?php printf( '%s', $booking->payment_id ? wpems_get_payment_title( $booking->payment_id ) : __( 'No payment.', 'eduma' ) ); ?></td>
                 <td><?php printf( '%s', wpems_booking_status( $booking->ID ) ); ?></td>

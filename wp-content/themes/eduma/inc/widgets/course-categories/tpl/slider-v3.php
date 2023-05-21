@@ -40,6 +40,7 @@ if ( $cat_course ) {
 		if(empty( $top_image )){
 			$top_image = get_term_meta( $value->term_id, 'thim_learnpress_cate_thumnail', true );
 		}
+
 		$img       = '<a href="' . esc_url( get_term_link( (int) $value->term_id, $taxonomy ) ) . '">';
 		if ( ! empty( $top_image ) && '' != $top_image['id'] ) {
 			$img .= thim_get_feature_image( $top_image['id'], 'full', $img_with, $img_height, $value->name );

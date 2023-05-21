@@ -1,12 +1,8 @@
 <?php
-global $post;
 $hidden_author     = 'no';
-$limit             = $instance['limit'];
 $columns           = $instance['grid-options']['columns'];
 $view_all_course   = ( $instance['view_all_courses'] && '' != $instance['view_all_courses'] ) ? $instance['view_all_courses'] : false;
 $view_all_position = ( $instance['view_all_position'] && '' != $instance['view_all_position'] ) ? $instance['view_all_position'] : 'top';
-$sort              = $instance['order'];
-$feature           = ! empty( $instance['featured'] ) ? true : false;
 $thumb_w           = ( ! empty( $instance['thumbnail_width'] ) && '' != $instance['thumbnail_width'] ) ? $instance['thumbnail_width'] : apply_filters( 'thim_course_thumbnail_width', 450 );
 $thumb_h           = ( ! empty( $instance['thumbnail_width'] ) && '' != $instance['thumbnail_height'] ) ? $instance['thumbnail_height'] : apply_filters( 'thim_course_thumbnail_height', 400 );
 if ( isset( $instance['grid_hide_author'] ) && $instance['grid_hide_author'] == 'yes' ) {
@@ -15,41 +11,9 @@ if ( isset( $instance['grid_hide_author'] ) && $instance['grid_hide_author'] == 
 } else {
 	$extra_class = '';
 }
-$condition = array(
-	'post_type'           => 'lp_course',
-	'posts_per_page'      => $limit,
-	'ignore_sticky_posts' => true,
-);
 
-if ( $sort == 'category' && $instance['cat_id'] && $instance['cat_id'] != 'all' ) {
-	if ( get_term( $instance['cat_id'], 'course_category' ) ) {
-		$condition['tax_query'] = array(
-			array(
-				'taxonomy' => 'course_category',
-				'field'    => 'term_id',
-				'terms'    => $instance['cat_id']
-			),
-		);
-	}
-}
 
-if ( $sort == 'popular' ) {
-	$post_in = eduma_lp_get_popular_courses( $limit );
-
-	$condition['post__in'] = $post_in;
-	$condition['orderby']  = 'post__in';
-}
-
-if ( $feature ) {
-	$condition['meta_query'] = array(
-		array(
-			'key'   => '_lp_featured',
-			'value' => 'yes',
-		)
-	);
-}
-
-$the_query    = new WP_Query( $condition );
+$the_query    = new WP_Query( $args['condition'] );
 $coursesCount = $the_query->found_posts;
 if ( $the_query->have_posts() ) :
 	?>
@@ -113,11 +77,14 @@ if ( $the_query->have_posts() ) :
 									echo '<span><i class="tk tk-users"></i> ' . intval( $course->count_students() ) . $student_text . '</span>';
 									if ( $hidden_author == 'no' ) { ?>
 										<?php
-										$courses_tag = get_the_terms( $course->get_id(), 'course_category' );
-										if ( $courses_tag ) {
-											echo '<a href="' . esc_url( get_term_link( $courses_tag[0]->term_id ) ) . '">';
-											echo ' <i class="tk tk-tag1"></i> ' . $courses_tag[0]->name . '</a>';
+										if( $course ){
+											$courses_tag = get_the_terms( $course->get_id(), 'course_category' );
+											if ( $courses_tag ) {
+												echo '<a href="' . esc_url( get_term_link( $courses_tag[0]->term_id ) ) . '">';
+												echo ' <i class="tk tk-tag1"></i> ' . $courses_tag[0]->name . '</a>';
+											}
 										}
+
 										if ( $course_rate ) {
 											echo '<span class="star"><i class="tk tk-star1"></i> ' . intval( $course_rate ) . '</span>';
 										} ?>

@@ -129,7 +129,7 @@ if ( ! function_exists( 'thim_comment' ) ) {
 			$add_below = 'div-comment';
 		}
 		?>
-		<<?php echo ent2ncr( $tag . ' ' ) ?><?php comment_class( 'description_comment' ) ?>>
+		<<?php echo esc_attr( $tag . ' ' ); ?><?php comment_class( 'description_comment' ) ?>>
 		<div class="wrapper-comment">
 			<?php
 			if ( $args['avatar_size'] != 0 ) {
@@ -148,7 +148,8 @@ if ( ! function_exists( 'thim_comment' ) ) {
 						class="author"><span class="author-name"><?php echo get_comment_author_link(); ?></span>
 					</div>
 					<div class="date" itemprop="commentTime">
-						<?php printf( get_comment_date(), get_comment_time() ) ?></div>
+						<?php printf( get_comment_date(), get_comment_time() ); ?>
+					</div>
 					<?php edit_comment_link( esc_html__( 'Edit', 'eduma' ), '', '' ); ?>
 					<?php comment_reply_link(
 						array_merge(
@@ -171,6 +172,7 @@ if ( ! function_exists( 'thim_comment' ) ) {
 				</div>
 			</div>
 		</div>
+		</<?php echo esc_attr( $tag . ' ' ); ?>
 		<?php
 	}
 }
@@ -277,8 +279,10 @@ if ( ! function_exists( 'thim_get_feature_image' ) ) {
 			$size_type = 'full';
 		}
 		$style = '';
+		$style = '';
+
 		if ( $width && $height ) {
-			$src = wp_get_attachment_image_src( $attachment_id, array( $width, $height ) );
+			$src = wp_get_attachment_image_src( $attachment_id, array( trim($width), trim($height) ) );
 			if ( ! empty( $src[1] ) && ! empty( $src[2] ) ) {
 				$style = ' width="' . $src[1] . '" height="' . $src[2] . '"';
 			}
@@ -500,7 +504,7 @@ if ( ! function_exists( 'thim_body_classes' ) ) {
 			$classes[] = 'learnpress-v4';
 		}
 		// Fix before loader
-		if ( (get_theme_mod( 'thim_header_sticky', false ) && ! ( is_singular( 'lpr_course' ) || is_singular( 'lp_course' ) ) ) ||  thim_eduma_header_position() == 'header_overlay') {
+		if ( ( get_theme_mod( 'thim_header_sticky', false ) && ! ( is_singular( 'lpr_course' ) || is_singular( 'lp_course' ) ) ) || thim_eduma_header_position() == 'header_overlay' ) {
 			$classes[] = 'fixloader';
 		}
 
@@ -560,7 +564,7 @@ if ( ! function_exists( 'thim_regites_query_post_format_gallery' ) ) {
 if ( ! function_exists( 'thim_default_get_post_thumbnail' ) ) {
 	function thim_default_get_post_thumbnail( $size ) {
 
-		if ( thim_plugin_active( 'thim-framework/tp-framework.php' ) || thim_plugin_active( 'thim-core/thim-core.php' ) ) {
+		if ( thim_plugin_active( 'thim-core/thim-core.php' ) ) {
 			return;
 		}
 
@@ -636,7 +640,6 @@ if ( ! function_exists( 'thim_disable_cf7_cache' ) ) {
 
 add_action( 'wpcf7_enqueue_scripts', 'thim_disable_cf7_cache' );
 
-
 /**
  * Function thim_related_our_team
  */
@@ -671,7 +674,6 @@ if ( ! function_exists( 'thim_related_our_team' ) ) {
 		return $query;
 	}
 }
-
 
 /**
  * Replace password message
@@ -747,7 +749,7 @@ if ( ! function_exists( 'thim_related_portfolio' ) ) {
 						$image_url = thim_get_feature_image( get_post_thumbnail_id( $post->ID ), 'full', apply_filters( 'thim_portfolio_thumbnail_width', 480 ), apply_filters( 'thim_portfolio_thumbnail_height', 320 ) );
 						echo '<div data-color="' . $bk_ef . '" ' . $bg . '>';
 						echo '<div class="portfolio-image" ' . $bg . '>' . $image_url . '
-					<div class="portfolio_hover"><div class="thumb-bg"><div class="mask-content">';
+						<div class="portfolio_hover"><div class="thumb-bg"><div class="mask-content">';
 						echo '<h3><a href="' . esc_url( get_permalink( $post->ID ) ) . '" title="' . esc_attr( get_the_title( $post->ID ) ) . '" >' . get_the_title( $post->ID ) . '</a></h3>';
 						echo '<span class="p_line"></span>';
 						$terms    = get_the_terms( $post->ID, 'portfolio_category' );
@@ -839,11 +841,19 @@ if ( ! function_exists( 'thim_gallery_popup' ) ) {
 /**
  * LearnPress section
  */
+function thim_eduma_child_locate_template() {
+	$base_directory = basename( get_stylesheet_directory() );
+	if ( ( $base_directory == 'eduma-child-kid-art' ) || ( $base_directory == 'eduma-child-kindergarten' ) || ( $base_directory == 'eduma-child-new-art' ) || ( $base_directory == 'eduma-child-udemy' ) ) {
+		return $base_directory;
+	} else {
+		return '';
+	}
+}
 
 if ( class_exists( 'LearnPress' ) ) {
 	$field_course_offline = true;
 	function thim_new_learnpress_template_path( $slash ) {
-		if ( thim_is_new_learnpress( '4.0.beta-0' ) ) {
+		if ( thim_is_new_learnpress( '4.0.0' ) ) {
 			$layout = '-v4';
 		} else {
 			$layout = '-v3';
@@ -865,19 +875,9 @@ if ( class_exists( 'LearnPress' ) ) {
 	require_once THIM_DIR . 'inc/learnpress' . $layout . '-functions.php';
 
 	if ( is_child_theme() === true && thim_is_new_learnpress( '4.0.0' ) ) {
-		function thim_eduma_child_locate_template() {
-			$base_directory = basename( get_stylesheet_directory() );
-			if ( ( $base_directory == 'eduma-child-kid-art' ) || ( $base_directory == 'eduma-child-kindergarten' ) || ( $base_directory == 'eduma-child-new-art' ) || ( $base_directory == 'eduma-child-udemy' ) ) {
-				return $base_directory;
-			} else {
-				return '';
-			}
-		}
-
+		$base_directory = thim_eduma_child_locate_template();
 		add_filter( 'learn_press_child_in_parrent_template_path', 'thim_eduma_child_locate_template', 999 );
-		$base_directory = basename( get_stylesheet_directory() );
-
-		if ( ( $base_directory == 'eduma-child-kid-art' ) || ( $base_directory == 'eduma-child-kindergarten' ) || ( $base_directory == 'eduma-child-new-art' ) || ( $base_directory == 'eduma-child-udemy' ) ) {
+		if ( $base_directory ) {
 			require_once THIM_DIR . 'lp-child-path/learnpress-v4/' . $base_directory . '/custom-functions-child.php';
 			$field_course_offline = false;
 		}
@@ -1158,92 +1158,6 @@ if ( ! function_exists( 'thim_is_current_url' ) ) {
 	}
 }
 
-/**
- * Filter level cost text paid membership pro
- */
-add_filter( 'pmpro_level_cost_text', 'thim_pmpro_getLevelCost', 10, 4 );
-if ( ! function_exists( 'thim_pmpro_getLevelCost' ) ) {
-	function thim_pmpro_getLevelCost( $r, $level, $tags, $short ) {
-		//initial payment
-		if ( ! $short ) {
-			$r = sprintf( __( 'The price for membership is <p class="price">%s</p>', 'eduma' ), pmpro_formatPrice( $level->initial_payment ) );
-		} else {
-			$r = sprintf( __( '%s', 'eduma' ), pmpro_formatPrice( $level->initial_payment ) );
-		}
-
-		//recurring part
-		if ( $level->billing_amount != '0.00' ) {
-			if ( $level->billing_limit > 1 ) {
-				if ( $level->cycle_number == '1' ) {
-					$r .= sprintf( __( '<p class="expired">then %s per %s for %d more %s</p>', 'eduma' ), pmpro_formatPrice( $level->billing_amount ), pmpro_translate_billing_period( $level->cycle_period ), $level->billing_limit, pmpro_translate_billing_period( $level->cycle_period, $level->billing_limit ) );
-				} else {
-					$r .= sprintf( __( '<p class="expired">then %s every %d %s for %d more payments</p>', 'eduma' ), pmpro_formatPrice( $level->billing_amount ), $level->cycle_number, pmpro_translate_billing_period( $level->cycle_period, $level->cycle_number ), $level->billing_limit );
-				}
-			} elseif ( $level->billing_limit == 1 ) {
-				$r .= sprintf( __( '<p class="expired">then %s after %d %s</p>', 'eduma' ), pmpro_formatPrice( $level->billing_amount ), $level->cycle_number, pmpro_translate_billing_period( $level->cycle_period, $level->cycle_number ) );
-			} else {
-				if ( $level->billing_amount === $level->initial_payment ) {
-					if ( $level->cycle_number == '1' ) {
-						if ( ! $short ) {
-							$r = sprintf( __( 'The price for membership is <strong>%s per %s</strong>', 'eduma' ), pmpro_formatPrice( $level->initial_payment ), pmpro_translate_billing_period( $level->cycle_period ) );
-						} else {
-							$r = sprintf( __( '<p class="expired">%s per %s</p>', 'eduma' ), pmpro_formatPrice( $level->initial_payment ), pmpro_translate_billing_period( $level->cycle_period ) );
-						}
-					} else {
-						if ( ! $short ) {
-							$r = sprintf( __( 'The price for membership is <strong>%s every %d %s</strong>', 'eduma' ), pmpro_formatPrice( $level->initial_payment ), $level->cycle_number, pmpro_translate_billing_period( $level->cycle_period, $level->cycle_number ) );
-						} else {
-							$r = sprintf( __( '<p class="expired">%s every %d %s</p>', 'eduma' ), pmpro_formatPrice( $level->initial_payment ), $level->cycle_number, pmpro_translate_billing_period( $level->cycle_period, $level->cycle_number ) );
-						}
-					}
-				} else {
-					if ( $level->cycle_number == '1' ) {
-						$r .= sprintf( __( '<p class="expired">then %s per %s</p>', 'eduma' ), pmpro_formatPrice( $level->billing_amount ), pmpro_translate_billing_period( $level->cycle_period ) );
-					} else {
-						$r .= sprintf( __( '<p class="expired">and then %s every %d %s</p>', 'eduma' ), pmpro_formatPrice( $level->billing_amount ), $level->cycle_number, pmpro_translate_billing_period( $level->cycle_period, $level->cycle_number ) );
-					}
-				}
-			}
-		}
-
-		//trial part
-		if ( $level->trial_limit ) {
-			if ( $level->trial_amount == '0.00' ) {
-				if ( $level->trial_limit == '1' ) {
-					$r .= ' ' . __( 'After your initial payment, your first payment is Free.', 'eduma' );
-				} else {
-					$r .= ' ' . sprintf( __( 'After your initial payment, your first %d payments are Free.', 'eduma' ), $level->trial_limit );
-				}
-			} else {
-				if ( $level->trial_limit == '1' ) {
-					$r .= ' ' . sprintf( __( 'After your initial payment, your first payment will cost %s.', 'eduma' ), pmpro_formatPrice( $level->trial_amount ) );
-				} else {
-					$r .= ' ' . sprintf( __( 'After your initial payment, your first %d payments will cost %s.', 'eduma' ), $level->trial_limit, pmpro_formatPrice( $level->trial_amount ) );
-				}
-			}
-		}
-
-		//taxes part
-		$tax_state = pmpro_getOption( "tax_state" );
-		$tax_rate  = pmpro_getOption( "tax_rate" );
-
-		if ( $tax_state && $tax_rate && ! pmpro_isLevelFree( $level ) ) {
-			$r .= sprintf( __( 'Customers in %s will be charged %s%% tax.', 'eduma' ), $tax_state, round( $tax_rate * 100, 2 ) );
-		}
-
-		if ( ! $tags ) {
-			$r = strip_tags( $r );
-		}
-
-		return $r;
-	}
-}
-
-/**
- * Filters Paid Membership pro login redirect & register redirect
- */
-remove_filter( 'login_redirect', 'pmpro_login_redirect', 10 );
-add_filter( 'pmpro_register_redirect', '__return_false' );
 
 /**
  * Check is course
@@ -1264,6 +1178,16 @@ if ( ! function_exists( 'thim_check_is_course' ) ) {
 if ( ! function_exists( 'thim_check_is_course_taxonomy' ) ) {
 	function thim_check_is_course_taxonomy() {
 		if ( function_exists( 'learn_press_is_course_taxonomy' ) && learn_press_is_course_taxonomy() ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+if ( ! function_exists( 'thim_check_learnpress' ) ) {
+	function thim_check_learnpress() {
+		if ( function_exists( 'is_learnpress' ) && is_learnpress() ) {
 			return true;
 		} else {
 			return false;
@@ -1936,51 +1860,6 @@ if ( ! function_exists( 'thim_footer_class' ) ) {
 	}
 }
 
-function thim_eduma_register_meta_boxes_portfolio( $meta_boxes ) {
-	$prefix       = 'thim_';
-	$meta_boxes[] = array(
-		'id'         => 'portfolio_bg_color',
-		'title'      => __( 'Portfolio Meta', 'eduma' ),
-		'post_types' => 'portfolio',
-		'fields'     => array(
-			array(
-				'name' => __( 'Background Color', 'eduma' ),
-				'id'   => $prefix . 'portfolio_bg_color_ef',
-				'type' => 'color',
-			),
-		)
-	);
-
-	return $meta_boxes;
-}
-
-add_filter( 'rwmb_meta_boxes', 'thim_eduma_register_meta_boxes_portfolio' );
-
-function thim_eduma_register_meta_boxes_post( $meta_boxes ) {
-	$prefix       = 'thim_';
-	$meta_boxes[] = array(
-		'id'         => 'post_gallery',
-		'title'      => __( 'Post Layout', 'eduma' ),
-		'post_types' => 'post',
-		'fields'     => array(
-			array(
-				'name'    => __( 'Layout Grid', 'eduma' ),
-				'id'      => $prefix . 'post_gallery_layout',
-				'type'    => 'select',
-				'options' => array(
-					'size11' => "Size 1x1(225 x 225)",
-					'size32' => "Size 3x2(900 x 450)",
-					'size22' => "Size 2x2(450 x 450)"
-				),
-			),
-		)
-	);
-
-	return $meta_boxes;
-}
-
-add_filter( 'rwmb_meta_boxes', 'thim_eduma_register_meta_boxes_post' );
-
 function thim_eduma_after_switch_theme() {
 	update_option( 'thim_eduma_version', THIM_THEME_VERSION );
 }
@@ -1989,34 +1868,8 @@ add_action( 'after_switch_theme', 'thim_eduma_after_switch_theme' );
 
 //add icon for level membership
 if ( thim_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) ) {
-	add_action( 'pmpro_membership_level_after_other_settings', 'thim_add_icon_package_membership', 11, 1 );
-	function thim_add_icon_package_membership() {
-		$val = get_option( 'thim_level_' . $_GET['edit'] ) ? get_option( 'thim_level_' . $_GET['edit'] ) : '';
-		?>
-		<table class="form-table">
-			<tbody>
-			<tr class="membership_categories">
-				<th scope="row" valign="top"><label><?php _e( 'Select Icon ', 'eduma' ); ?>:</label></th>
-				<td>
-					<input type="text" name="image_level" id="image_level" size="30" value="<?php echo $val; ?>">
-				</td>
-			</tr>
-			</tbody>
-		</table>
-		<?php
-	}
-
-	add_action( 'pmpro_save_membership_level', 'thim_save_icon_package_membership', 10, 1 );
-	function thim_save_icon_package_membership( $level_id ) {
-		$img = isset( $_POST['image_level'] ) ? $_POST['image_level'] : '';
-		if ( get_option( 'thim_level_' . $level_id ) !== false ) {
-			update_option( 'thim_level_' . $level_id, $img );
-		} else {
-			add_option( 'thim_level_' . $level_id, $img );
-		}
-	}
+	require_once THIM_DIR . 'paid-memberships-pro/functions.php';
 }
-
 
 if ( ! function_exists( 'thim_time_ago' ) ) {
 	function thim_time_ago( $time ) {
@@ -2561,3 +2414,100 @@ add_filter( 'thim-message-before-importer', 'thim_message_before_importer' );
 add_filter( 'thim_breadcrumb_text_home', function () {
 	return _x( 'Home', 'breadcrumb', 'eduma' );
 } );
+
+// add internal css in header
+add_filter( 'thim_custom_internal_css', 'thim_custom_internal_css' );
+function thim_custom_internal_css() {
+	ob_start();
+	$base_directory      = thim_eduma_child_locate_template();
+ 	$custom_body_class   = array( 'thim-demo-university-4', 'thim-demo-university-3', 'three_line_top_bottom', 'body-grad-layout' );
+	$custom_footer_class = array( 'thim-footer-new-eduma', 'white_background', 'custom-title' );
+
+	if ( get_theme_mod( 'thim_preload', true ) ) {
+		echo "\r\n/** CSS preloading */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/preloading.css";
+	}
+	// Css BBpress
+	if ( thim_use_bbpress() ) {
+		echo "\r\n/** CSS bbPress */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/bbpress-forum.css";
+	}
+
+	// Css BuddyPress
+	if ( class_exists( 'BuddyPress' ) ) {
+		echo "\r\n/** CSS BuddyPress */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/buddypress.css";
+	}
+
+	// Css LearnPress
+	if ( class_exists( 'LearnPress' ) ) {
+		if ( ! thim_is_new_learnpress( '4.0.0' ) ) {
+			echo "\r\n/** CSS Fix LearnPress V3 */\r\n";
+			include_once THIM_DIR . "/assets/css/libs/leanrpress-v3.css";
+		}
+	}
+
+	if ( ( is_child_theme() === true && $base_directory ) || in_array( get_theme_mod( 'thim_body_custom_class', false ), $custom_body_class, true ) ) {
+		echo "\r\n/** CSS Fix Child Theme */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/child-theme.css";
+	}
+
+	if ( in_array( get_theme_mod( 'thim_footer_custom_class', false ), $custom_footer_class, true ) ) {
+		echo "\r\n/** CSS Fix Footer */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/custom-footer.css";
+	}
+
+	if (  get_theme_mod( 'thim_footer_custom_class', false ) == 'footer-restaurant'  ||  get_theme_mod( 'thim_body_custom_class', false ) == 'eduma-restaurant' ) {
+		echo "\r\n/** CSS Demo Restaurant */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/demo-restaurant.css";
+	}
+
+	//Load style for page builder Visual Composer
+	if ( thim_plugin_active( 'js_composer/js_composer.php' ) ) {
+		echo "\r\n/** CSS Custom VC */\r\n";
+		include_once THIM_DIR . "/assets/css/custom-vc.css";
+	}
+
+	if ( is_single() && is_singular( 'lp_course' ) ) {
+		echo "\r\n/** CSS Single Course */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/course-single.css";
+	}
+	if ( ( ( get_post_type() == "lp_course" || thim_check_is_course() ) & ! is_single() ) || get_post_type() == "lp_collection" ) {
+		echo "\r\n/** CSS Archive Course */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/archive-course.css";
+	}
+
+	if ( get_post_type() == 'post' && ( is_category() || is_archive() || is_singular( 'post' ) || is_front_page() || is_home() ))  {
+		echo "\r\n/** CSS Blog */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/blog.css";
+	}
+	if ( is_plugin_active( 'paid-memberships-pro/paid-memberships-pro.php' ) ) {
+		echo "\r\n/** CSS Paid Memberships Pro */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/pmpro.css";
+	}
+	// woocommerce
+	if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_shop() || is_product_category() || is_product() ||
+			is_cart() || is_checkout() || is_account_page()) ) {
+		echo "\r\n/** CSS Woocommerce */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/woocommerce.css";
+	}
+
+	if ( class_exists( 'RevSlider' ) ) {
+		echo "\r\n/** CSS RevSlider */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/rev_slider.css";
+	}
+
+	if ( apply_filters( 'thim-support-mega-menu', true ) ) {
+		echo "\r\n/** CSS TC Megamenu */\r\n";
+		include_once THIM_DIR . "/assets/css/libs/tc-megamenu.css";
+	}
+	if(get_theme_mod( 'thim_custom_css' )){
+		echo "\r\n/** CSS Extral Customizer */\r\n";
+		echo trim( get_theme_mod( 'thim_custom_css' ) );
+	}
+
+ 	$css = ob_get_contents();
+ 	ob_end_clean();
+
+	return $css;
+}

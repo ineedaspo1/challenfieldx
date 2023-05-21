@@ -23,7 +23,6 @@ if ( ! function_exists( 'thim_wapper_page_title' ) ) :
 			$cat_ID       = '';
 			$cat_taxonomy = '';
 		}
-
 		//Get $prefix
 		$prefix = thim_get_prefix_page_title();
 
@@ -31,10 +30,16 @@ if ( ! function_exists( 'thim_wapper_page_title' ) ) :
 		$prefix_inner = thim_get_prefix_inner_page_title();
 
 		//Background image default from customizer options
+
 		if ( get_post_type() == 'forum' || get_post_type() == 'topic' ) {
 			$prefix       = 'thim_forum_';
 			$prefix_inner = 'cate_';
 		}
+		if ( get_post_type() == 'learnpress_package' ) {
+			$prefix       = 'thim_package_';
+			$prefix_inner = '';
+		}
+
 		// config page 404
 		if ( is_404() ) {
 			$prefix       = 'thim_single_';

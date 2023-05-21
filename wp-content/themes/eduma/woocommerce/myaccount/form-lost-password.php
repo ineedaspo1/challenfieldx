@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_lost_password_form' );
 ?>
-<div class="reset_password">
+<div class="reset_password" id="customer_login">
     <h2><?php esc_attr_e( 'Get Your Password', 'eduma' ); ?></h2>
     <form method="post" class="lost_reset_password">
 		<p class="description"><?php echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>

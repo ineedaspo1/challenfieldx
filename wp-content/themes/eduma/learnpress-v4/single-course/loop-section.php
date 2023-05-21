@@ -71,6 +71,7 @@ $items = $section->get_items();
 			<?php foreach ( $items as $item ) : ?>
 				<?php
 				$can_view_item = $user->can_view_item( $item->get_id(), $can_view_content_course );
+				$class_item    = implode( ' ', $item->get_class_v2( $course->get_id(), $item->get_id(), $can_view_item ) );
 				$post_type = str_replace( 'lp_', '', $item->get_item_type() );
 					if ( empty( $count[$post_type] ) ) {
 						$count[$post_type] = 1;
@@ -78,7 +79,7 @@ $items = $section->get_items();
 						$count[$post_type] ++;
 					}
 					?>
-					<li class="<?php echo esc_attr( implode( ' ', $item->get_class() ) ); ?>" data-id="<?php echo esc_attr( $item->get_id() ); ?>">
+					<li class="<?php echo esc_attr( $class_item ); ?>" data-id="<?php echo esc_attr( $item->get_id() ); ?>">
 
 						<div class="meta-left">
 							<?php do_action( 'learn_press_before_section_item_title', $item, $section, $course ); ?>

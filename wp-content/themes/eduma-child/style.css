@@ -110,9 +110,7 @@ img.testimonial_img {
     width: 100%;
 }
 
-.single-lp_course .elementor-widget-wrap.elementor-element-populated {
-    padding-bottom: 35px !important;
-}
+
 
 form.auto_login {
         display: flex;
@@ -131,4 +129,10 @@ p.lname {
 }
 .thim-login .title, .thim-register .title {
     padding-top: 5px;
+}
+.pmpro-checkout .pmpro_login_wrap{
+    display: none;
+}
+.cours_id_wrap{
+    columns: 100px 2
 }

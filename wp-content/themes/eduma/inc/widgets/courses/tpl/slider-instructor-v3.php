@@ -1,62 +1,22 @@
 <?php
-
-global $post;
-$limit        = $instance['limit'];
 $item_visible = $instance['slider-options']['item_visible'];
 $pagination   = $instance['slider-options']['show_pagination'] ? $instance['slider-options']['show_pagination'] : 0;
 $navigation   = $instance['slider-options']['show_navigation'] ? $instance['slider-options']['show_navigation'] : 0;
 $autoplay     = isset( $instance['slider-options']['auto_play'] ) ? $instance['slider-options']['auto_play'] : 0;
-$featured     = ! empty( $instance['featured'] ) ? true : false;
 $thumb_w      = ( ! empty( $instance['thumbnail_width'] ) && '' != $instance['thumbnail_width'] ) ? $instance['thumbnail_width'] : apply_filters( 'thim_course_thumbnail_width', 450 );
 $thumb_h      = ( ! empty( $instance['thumbnail_height'] ) && '' != $instance['thumbnail_height'] ) ? $instance['thumbnail_height'] : apply_filters( 'thim_course_thumbnail_height', 400 );
 
-$condition = array(
-	'post_type'           => 'lp_course',
-	'posts_per_page'      => $limit,
-	'ignore_sticky_posts' => true,
-);
-$sort      = $instance['order'];
-
-if ( $sort == 'category' && $instance['cat_id'] && $instance['cat_id'] != 'all' ) {
-	if ( get_term( $instance['cat_id'], 'course_category' ) ) {
-		$condition['tax_query'] = array(
-			array(
-				'taxonomy' => 'course_category',
-				'field'    => 'term_id',
-				'terms'    => $instance['cat_id']
-			),
-		);
-	}
-}
-
-
-if ( $sort == 'popular' ) {
-    $post_in = eduma_lp_get_popular_courses( $limit );
-
-	$condition['post__in'] = $post_in;
-	$condition['orderby']  = 'post__in';
-
-}
-
-if ( $featured ) {
-	$condition['meta_query'] = array(
-		array(
-			'key'   => '_lp_featured',
-			'value' => 'yes',
-		)
-	);
-}
-
-$the_query = new WP_Query( $condition );
+$the_query = new WP_Query( $args['condition'] );
 
 if ( $the_query->have_posts() ) :
 	if ( $instance['title'] ) {
 		echo ent2ncr( $args['before_title'] . $instance['title'] . $args['after_title'] );
 	}
-
 	?>
-	<div class="thim-course-slider-instructor" data-visible="<?php echo esc_attr( $item_visible ); ?>" data-desktopsmall="3" data-itemtablet="2"
-	     data-pagination="<?php echo esc_attr( $pagination ); ?>" data-navigation="<?php echo esc_attr( $navigation ); ?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
+	<div class="thim-course-slider-instructor" data-visible="<?php echo esc_attr( $item_visible ); ?>"
+		 data-desktopsmall="3" data-itemtablet="2"
+		 data-pagination="<?php echo esc_attr( $pagination ); ?>"
+		 data-navigation="<?php echo esc_attr( $navigation ); ?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>">
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="course-item">
 

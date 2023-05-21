@@ -284,6 +284,13 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 								'priority' => 10,
 								'icon'     => '<i class="fas fa-home"></i>',
 							),
+							'avatar'            => array(
+								'title'    => esc_html__( 'Avatar', 'learnpress' ),
+								'callback' => array( $this, 'tab_order_details' ),
+								'slug'     => $settings->get( 'profile_endpoints.settings-avatar', 'avatar' ),
+								'priority' => 20,
+								'icon'     => '<i class="fas fa-user-circle"></i>',
+							),
 							'change-password'   => array(
 								'title'    => esc_html__( 'Password', 'learnpress' ),
 								'slug'     => $settings->get( 'profile_endpoints.settings-change-password', 'change-password' ),
@@ -292,26 +299,16 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 								'icon'     => '<i class="fas fa-key"></i>',
 							),
 						),
-						'priority' => 35,
+						'priority' => 90,
 						'icon'     => '<i class="fas fa-cog"></i>',
 					),
 					'logout'        => array(
 						'title'    => esc_html__( 'Logout', 'learnpress' ),
 						'slug'     => learn_press_profile_logout_slug(),
 						'icon'     => '<i class="fas fa-sign-out-alt"></i>',
-						'priority' => 40,
+						'priority' => 100,
 					),
 				);
-
-				if ( $this->is_enable_avatar() ) {
-					$this->_default_settings['settings']['sections']['avatar'] = array(
-						'title'    => esc_html__( 'Avatar', 'learnpress' ),
-						'callback' => array( $this, 'tab_order_details' ),
-						'slug'     => $settings->get( 'profile_endpoints.settings-avatar', 'avatar' ),
-						'priority' => 20,
-						'icon'     => '<i class="fas fa-user-circle"></i>',
-					);
-				}
 
 				if ( 'yes' === self::get_option_publish_profile() ) {
 					$this->_default_settings['settings']['sections']['privacy'] = array(
@@ -324,10 +321,11 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 				}
 				//}
 
-				$tabs = $this->_default_settings;
-				$tabs = apply_filters( 'learn-press/profile-tabs', $tabs );
+				$tabs        = $this->_default_settings;
+				$tabs        = apply_filters( 'learn-press/profile-tabs', $tabs );
+				$this->_tabs = new LP_Profile_Tabs( $tabs, $this );
 
-				return $this->_tabs = new LP_Profile_Tabs( $tabs, $this );
+				return $this->_tabs;
 		}
 
 		public function get_slug( $data, $default = '' ) {
@@ -338,8 +336,9 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 		 * Enable custom avatar?
 		 *
 		 * @return bool
+		 * @deprecated 4.2.2.2
 		 */
-		public function is_enable_avatar() {
+		/*public function is_enable_avatar() {
 			$profile_avatar = get_option( 'learn_press_profile_avatar' );
 
 			if ( ! $profile_avatar ) {
@@ -358,7 +357,7 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 			}
 
 			return LP_Settings::instance()->get( 'profile_avatar' ) === 'yes';
-		}
+		}*/
 
 		/**
 		 * Get current tab slug in query string.
@@ -810,8 +809,10 @@ if ( ! class_exists( 'LP_Profile' ) ) {
 		 * @param mixed $args
 		 *
 		 * @return array|LP_Query_List_Table
+		 * @deprecated 4.2.2.4
 		 */
 		public function query_quizzes( $args = '' ) {
+			_deprecated_function( __METHOD__, '4.2.2.4' );
 			return $this->_curd->query_quizzes( $this->get_user_data( 'id' ), $args );
 		}
 

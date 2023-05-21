@@ -159,7 +159,9 @@ if ( ! function_exists( 'thim_remove_learnpress_hooks' ) ) {
 		add_action( 'thim_single_course_payment', LearnPress::instance()->template( 'course' )->func( 'course_buttons' ), 15 );
  		add_action( 'thim_single_course_meta', LearnPress::instance()->template( 'course' )->callback( 'single-course/instructor' ), 5 );
 		add_action( 'thim_single_course_meta', LearnPress::instance()->template( 'course' )->callback( 'single-course/meta/category' ), 15 );
-		add_action( 'thim_single_course_meta', 'thim_course_ratings', 25 );
+		if ( class_exists( 'LP_Addon_Course_Review' ) ) {
+			add_action( 'thim_single_course_meta', 'learn_press_course_meta_primary_review', 25 );
+		}
 		add_action( 'thim_single_course_meta', LearnPress::instance()->template( 'course' )->func( 'user_progress' ), 30 );
 
 		add_action( 'thim_single_course_featured_review', LearnPress::instance()->template( 'course' )->func( 'course_featured_review' ), 5 );
@@ -702,9 +704,9 @@ if ( ! function_exists( 'thim_menu_sidebar_course' ) ) {
 	function thim_menu_sidebar_course(){?>
 		<div class="menu_course">
 		<?php $tabs = learn_press_get_course_tabs(); ?>
-						<ul>
-							<?php foreach ( $tabs as $key => $tab ) { ?>
-								<li role="presentation">
+			<ul>
+				<?php foreach ( $tabs as $key => $tab ) { ?>
+					<li role="presentation">
 									<a href="#<?php echo esc_attr( $tab['id'] ); ?>" data-toggle="tab">
 										<?php
 										if ( $tab['icon'] ) {
@@ -714,9 +716,9 @@ if ( ! function_exists( 'thim_menu_sidebar_course' ) ) {
 									<span><?php echo $tab['title']; ?></span>
 								</a>
 							</li>
-						<?php } ?>
-					</ul>
-			</div>
+					<?php } ?>
+				</ul>
+		</div>
 	<?php
 	}
 }
@@ -757,6 +759,7 @@ if ( ! function_exists( 'thim_single_title_desc_layout_3' ) ) {
 		<?php }
 	}
 }
+
 // add image size for elementor
 $course_thumbnail_dimensions = learn_press_get_course_thumbnail_dimensions();
 
@@ -765,3 +768,26 @@ if($course_thumbnail_dimensions){
 	$height_thumbnail            = $course_thumbnail_dimensions['height'];
  	add_image_size('course_thumbnail',$with_thumbnail,$height_thumbnail,true );
 }
+
+// filter for package
+add_filter( 'lp/upsell/archive-package/wrapper', 'lp_upsell_archive_package_wrapper_page_title' );
+add_filter( 'lp/upsell/single-package/wrapper', 'lp_upsell_single_package_wrapper_page_title' );
+function lp_upsell_archive_package_wrapper_page_title() {
+	return array(
+		thim_wapper_page_title()                     => '',
+		'<div class="learnpress-packages__wrapper site-content container">' => '</div>'
+	);
+}
+
+function lp_upsell_single_package_wrapper_page_title() {
+	return array(
+		thim_wapper_page_title()                     => '',
+		'<div class="learnpress-packages__wrapper site-content container">' => '</div>',
+		'<div class="single-package-wrapper">'       => '</div>',
+	);
+}
+
+add_filter('lp/upsell/archive-package/sections', function ($section){
+	unset($section['header']);
+	return $section;
+});

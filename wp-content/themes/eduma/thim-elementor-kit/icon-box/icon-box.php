@@ -127,12 +127,12 @@ class Thim_Ekit_Widget_Icon_Box extends Widget_Base {
 				]
 			]
 		);
-		$this->add_control(
+		$this->add_responsive_control(
 			'bg_image_size',
 			[
 				'label'      => esc_html__( 'Size', 'eduma' ),
 				'type'       => Controls_Manager::SELECT,
-				'responsive' => true,
+//				'responsive' => true,
 				'default'    => '',
 				'options'    => [
 					''        => esc_html__( 'Default', 'eduma' ),

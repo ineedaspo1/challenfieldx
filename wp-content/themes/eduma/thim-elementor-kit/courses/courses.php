@@ -14,11 +14,11 @@ class Thim_Ekit_Widget_Courses extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Courses', 'eduma' );
+		return esc_html__( 'Eduma List Courses', 'eduma' );
 	}
 
 	public function get_icon() {
-		return 'thim-eicon thim-widget-icon thim-widget-icon-courses';
+		return 'thim-widget-icon thim-widget-icon-courses';
 	}
 
 	protected function get_html_wrapper_class() {
@@ -80,7 +80,7 @@ class Thim_Ekit_Widget_Courses extends Widget_Base {
 					'megamenu'          => esc_html__( 'Mega Menu', 'eduma' ),
 					'tabs'              => esc_html__( 'Category Tabs', 'eduma' ),
 					'tabs-slider'       => esc_html__( 'Category Tabs Slider', 'eduma' ),
-  					'item-tabs-slider'  => esc_html__( 'Category Item Tabs Slider', 'eduma' )
+					'item-tabs-slider'  => esc_html__( 'Category Item Tabs Slider', 'eduma' )
 				],
 				'default' => 'slider'
 			]
@@ -633,22 +633,53 @@ class Thim_Ekit_Widget_Courses extends Widget_Base {
 			'cat_id_tab' => $settings['cat_id_tab']
 		);
 
-
-		$layout = $settings['layout'];
-
-		if ( thim_is_new_learnpress( '3.0' ) ) {
-			$layout .= '-v3';
-		} else if ( thim_is_new_learnpress( '2.0' ) ) {
-			$layout .= '-v2';
-		} else if ( thim_is_new_learnpress( '1.0' ) ) {
-			$layout .= '-v1';
-		}
+		$layout = $settings['layout'].'-v3';
 
 		$args                 = array();
 		$args['before_title'] = '<h3 class="widget-title">';
 		$args['after_title']  = '</h3>';
+		$args['condition']    = $this->render_query_post($settings);
 
 		thim_ekit_get_widget_template( $this->get_base(), array( 'instance' => $settings, 'args' => $args ), $layout );
+	}
+
+	protected function render_query_post($settings) {
+ 		// query
+		$limit     = $settings['limit'];
+		$sort      = $settings['order'];
+		$feature   = ! empty( $settings['featured'] ) ? true : false;
+		$condition = array(
+			'post_type'           => 'lp_course',
+			'posts_per_page'      => $limit,
+			'ignore_sticky_posts' => true,
+		);
+		if ( $sort == 'category' && $settings['cat_id'] && $settings['cat_id'] != 'all' ) {
+			if ( get_term( $settings['cat_id'], 'course_category' ) ) {
+				$condition['tax_query'] = array(
+					array(
+						'taxonomy' => 'course_category',
+						'field'    => 'term_id',
+						'terms'    => $settings['cat_id']
+					),
+				);
+			}
+		}
+		if ( $sort == 'popular' ) {
+			$post_in               = eduma_lp_get_popular_courses( $limit );
+			$condition['post__in'] = $post_in;
+			$condition['orderby']  = 'post__in';
+		}
+
+		if ( $feature ) {
+			$condition['meta_query'] = array(
+				array(
+					'key'   => '_lp_featured',
+					'value' => 'yes',
+				)
+			);
+		}
+
+		return $condition;
 	}
 
 }

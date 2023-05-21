@@ -1594,7 +1594,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$slider_class       = ' thim-ekits-sliders ' . $swiper_class;
 		?>
 		<div class="thim-ekits-testimonial__inner thim-ekits-thumb-gallery">
-			<div class="thim-ekits-testimonial__avatars<?php echo esc_attr($slider_class); ?>>">
+			<div class="thim-ekits-testimonial__avatars<?php echo esc_attr($slider_class); ?>">
 				<div class="thim-ekits-testimonial__avatars-swapper swiper-wrapper">
 					<?php
 					foreach ( $testimonials as $testimonial ) {
@@ -1608,7 +1608,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				<div class="thim-ekits-testimonial__separetor"></div>
 			<?php endif; ?>
 
-			<div class="thim-ekits-testimonial__content thim-ekits-gallery-thumbs swiper-container">
+			<div class="thim-ekits-testimonial__content thim-ekits-gallery-thumbs swiper swiper-container">
 				<div class="thim-ekits-testimonial__content-swapper swiper-wrapper">
 					<?php foreach ( $testimonials as $key => $testimonial ) { ?>
 						<div class="thim-ekits-testimonial__article swiper-slide">

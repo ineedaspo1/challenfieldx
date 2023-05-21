@@ -19,7 +19,7 @@ $tabs = learn_press_get_course_tabs();
 
 <?php foreach ( $tabs as $key => $tab ) { ?>
     <div id="<?php echo esc_attr( $tab['id'] ); ?>" class="row_content_course">
-        <div class="sc_heading clone_title  text-left">
+        <div class="sc_heading clone_title text-left">
             <h2 class="title"><?php echo $tab['title']; ?></h2>
             <div class="clone"><?php echo $tab['title']; ?></div>
         </div>

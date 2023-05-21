@@ -1,7 +1,8 @@
 <?php
 
 function thim_get_all_plugins_require( $plugins ) {
-	$plugins = array(
+	$extra_plugin = array();
+	$plugins      = array(
 
 		array(
 			'name'       => 'Revolution Slider',
@@ -316,7 +317,33 @@ function thim_get_all_plugins_require( $plugins ) {
 			'slug'     => 'h5p',
 			'required' => false,
 		),
-
+		array(
+			'name'     => 'WPBakery',
+			'slug'     => 'js_composer',
+			'premium'  => true,
+			'required' => false,
+			'icon'     => 'https://s3.envato.com/files/260579516/wpb-logo.png',
+		),
+		array(
+			'name'     => 'Elementor Page Builder',
+			'slug'     => 'elementor',
+			'required' => false,
+		),
+		array(
+			'name'       => 'Thim Elementor Kit',
+			'slug'       => 'thim-elementor-kit',
+			// 'premium'     => true,
+			'no-install' => true,
+			'required'   => false,
+		),
+		array(
+			'name'     => 'Thim Elementor Kit Pro',
+			'slug'     => 'thim-elementor-kit-pro',
+			'icon'     => 'https://plugins.thimpress.com/downloads/images/thim-ekits-pro.png',
+			'premium'  => true,
+			'required' => false,
+			'add-on'   => true,
+		),
 		//		array(
 		//			'name'        => 'Eduma Demo Data',
 		//			'slug'        => 'eduma-demo-data',
@@ -333,15 +360,9 @@ function thim_get_all_plugins_require( $plugins ) {
 			'no-install' => true,
 		),
 	);
+
 	if ( apply_filters( 'thim-importer-demo-vc', false ) || get_theme_mod( 'thim_page_builder_chosen' ) == 'visual_composer' ) {
 		$extra_plugin = array(
-			array(
-				'name'     => 'WPBakery',
-				'slug'     => 'js_composer',
-				'premium'  => true,
-				'required' => false,
-				'icon'     => 'https://s3.envato.com/files/260579516/wpb-logo.png',
-			),
 			array(
 				'name'       => 'Thim Our Team',
 				'slug'       => 'thim-our-team',
@@ -359,7 +380,7 @@ function thim_get_all_plugins_require( $plugins ) {
 				'no-install' => true,
 			),
 		);
-	} elseif ( apply_filters( 'thim-importer-demo-so', false ) || get_theme_mod( 'thim_page_builder_chosen' ) == 'site_origin' ) {
+	} elseif ( apply_filters( 'thim-importer-demo-so', false ) || get_theme_mod( 'thim_page_builder_chosen' ) == 'site_origin' || class_exists( 'SiteOrigin_Panels' ) ) {
 		// support importer with
 		$extra_plugin = array(
 			array(
@@ -387,30 +408,6 @@ function thim_get_all_plugins_require( $plugins ) {
 				'icon'     => 'https://plugins.thimpress.com/downloads/images/thim-testimonials.png',
 				'required' => false,
 
-			),
-		);
-	} else {
-		$extra_plugin = array(
-
-			array(
-				'name'     => 'Elementor Page Builder',
-				'slug'     => 'elementor',
-				'required' => false,
-			),
-			array(
-				'name'       => 'Thim Elementor Kit',
-				'slug'       => 'thim-elementor-kit',
-				// 'premium'     => true,
-				'no-install' => true,
-				'required'   => false,
-			),
-			array(
-				'name'     => 'Thim Elementor Kit Pro',
-				'slug'     => 'thim-elementor-kit-pro',
-				'icon'     => 'https://plugins.thimpress.com/downloads/images/thim-ekits-pro.png',
-				'premium'  => true,
-				'required' => false,
-				'add-on'   => true,
 			),
 		);
 	}

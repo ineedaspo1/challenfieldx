@@ -74,6 +74,42 @@ class Thim_Ekit_Widget_Slider extends Widget_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'slidesPerView',
+			array(
+				'label'              => esc_html__( 'Show Item', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 20,
+				'step'               => 1,
+				'default'            => 1,
+			)
+		);
+
+		$this->add_responsive_control(
+			'slidesPerGroup',
+			array(
+				'label'              => esc_html__( 'Scroll Item', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 20,
+				'step'               => 1,
+				'default'            => 1,
+			)
+		);
+
+		$this->add_responsive_control(
+			'spaceBetween',
+			array(
+				'label'              => esc_html__( 'Item Space', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 0,
+				'max'                => 100,
+				'step'               => 1,
+				'default'            => 0,
+			)
+		);
+
 		$this->add_control(
 			'slider_speed',
 			array(
@@ -185,9 +221,9 @@ class Thim_Ekit_Widget_Slider extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$slider_settings = [
-			'slidesPerView'          => 1,
-			'slidesPerGroup'         => 1,
-			'spaceBetween'           => 0,
+			'slidesPerView'          => $settings['slidesPerView'],
+			'slidesPerGroup'         => $settings['slidesPerGroup'],
+			'spaceBetween'           => $settings['spaceBetween'],
 			'slider_speed'           => $settings['slider_speed'],
 			'slider_show_pagination' => $settings['slider_show_pagination'] ?? 'no',
 			'slider_autoplay'        => $settings['slider_autoplay'] ?? 'false',

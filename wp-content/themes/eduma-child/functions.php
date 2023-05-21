@@ -8,14 +8,14 @@ add_action( 'wp_enqueue_scripts', 'thim_child_enqueue_styles', 1000 );
 
 
 // checks if the user is logged in, if not, redirects to the user account page uses //pmpro_checkout_before_submit_button hook
-add_action('pmpro_checkout_before_submit_button', 'pmpro_checkout_redirect');
+/*add_action('pmpro_checkout_before_submit_button', 'pmpro_checkout_redirect');
 
 function pmpro_checkout_redirect(){
     if( !is_user_logged_in() ){
         wp_redirect( home_url( '/account/' ) );
         exit;
     }
-}
+}*/
 
 add_shortcode('Post-shortcode', 'get_testimonial');
 
@@ -112,13 +112,44 @@ function ad_user_lastname( $lastname) {
     return $lastname;
 }
 
+/* Rename Course tabs */
 
+add_filter( 'learn-press/course-tabs', 'wpb_reptro_course_tab_customize' );
+function wpb_reptro_course_tab_customize( $tabs ){
 
+	$tabs['instructor']['title']   = esc_html__( 'Expert', 'reptro' );
+	return $tabs;
+}
 
+/*--  Add Courses list  --*/
+add_shortcode('courses_list','custom_shortcode_fun');
+function custom_shortcode_fun(){
+    $args = array(
+        'post_type' => 'lp_course',
+        'posts_per_page' => -1
+    );
+    if(is_user_logged_in() && function_exists('pmpro_hasMembershipLevel') && pmpro_hasMembershipLevel()){
+        global $current_user;
+        $current_user->membership_level = pmpro_getMembershipLevelForUser($current_user->ID);
+        $args['meta_query'][] = array('key' => '_lp_pmpro_levels','value' =>$current_user->membership_level->ID,'compare' =>'=');
+        $current_level = !empty($current_user->membership_level->name)?'<strong>Your current level is: </strong>'.$current_user->membership_level->name :'<strong>Your current level is: </strong> (Status Pending)' ;
+    }else{
+        global $current_user;
+        $current_level = !empty($current_user->membership_level->name)?'<strong>Your current level is: </strong>'.$current_user->membership_level->name :'<strong>Your current level is: </strong> (Status Pending)' ;
+    }
+    $the_query = new WP_Query( $args );
+        if ( $the_query->have_posts() ) {
+            while ( $the_query->have_posts() ){
+                $the_query->the_post();
+                $course_id = get_the_ID();
+                $course_title = get_the_title($course_id);
+                $course_level = get_post_meta($course_id, '_lp_pmpro_levels', true); 
+                $post_link = get_post_permalink($course_id);
+                $output .= !empty( $course_id )?'<li><a href="'.$post_link.'">'. $course_title.'</a></li>':'';
+            }
+        }
+        $display_output = !empty($output)? '<div class="course_list_wrap"><div>'.$current_level.'</div><div class="course_list"><h4>Courses list</h4><ul class="cours_id_wrap">'.$output.'</ul></div></div>' : '';
+        wp_reset_postdata();
+        return $display_output; 
 
-
-
-
-
-
-
+}

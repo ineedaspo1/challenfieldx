@@ -256,25 +256,22 @@ thim_customizer()->add_field(
 		)
 	)
 );
-
+$course_tabs = apply_filters( 'thim_customize_course_tabs', array(
+	'description'   => esc_html__( 'Description', 'eduma' ),
+	'curriculum'    => esc_html__( 'Curriculum', 'eduma' ),
+	'instructor'    => esc_html__( 'Instructors', 'eduma' ),
+	'students-list' => esc_html__( 'Student list', 'eduma' ),
+	'review'        => esc_html__( 'Reviews', 'eduma' ),
+	'faqs'        => esc_html__( 'Faqs', 'eduma' ),
+) );
 if ( class_exists( 'LP_Addon_Announcements_Preload' ) ) {
-	$course_tabs = apply_filters( 'thim_customize_course_tabs', array(
-		'description'   => esc_html__( 'Description', 'eduma' ),
-		'curriculum'    => esc_html__( 'Curriculum', 'eduma' ),
-		'instructor'    => esc_html__( 'Instructors', 'eduma' ),
-		'announcements' => esc_html__( 'Announcements', 'eduma' ),
-		'students-list' => esc_html__( 'Student list', 'eduma' ),
-		'review'        => esc_html__( 'Reviews', 'eduma' ),
-	) );
-} else {
-	$course_tabs = apply_filters( 'thim_customize_course_tabs', array(
-		'description'   => esc_html__( 'Description', 'eduma' ),
-		'curriculum'    => esc_html__( 'Curriculum', 'eduma' ),
-		'instructor'    => esc_html__( 'Instructors', 'eduma' ),
-		'students-list' => esc_html__( 'Student list', 'eduma' ),
-		'review'        => esc_html__( 'Reviews', 'eduma' ),
-	) );
+	$course_tabs['announcements'] =  esc_html__( 'Announcements', 'eduma' );
 }
+
+if ( class_exists( 'LP_Addon_Upsell_Preload' ) ) {
+	$course_tabs['package'] =  esc_html__( 'Package', 'eduma' );
+}
+
 // Tab Course
 thim_customizer()->add_field(
 	array(

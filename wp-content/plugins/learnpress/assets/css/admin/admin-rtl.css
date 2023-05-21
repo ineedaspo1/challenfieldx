@@ -4164,6 +4164,16 @@ input[name=_lp_course_result]:checked ~ #passing-condition-quiz-result {
   color: #fff0f6;
 }
 
+.tab-lp-admin-notice {
+  margin-right: 5px;
+  width: 4px;
+  height: 4px;
+  background: #ff1919;
+  display: inline-flex;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
 /**
  * General style for admin editor.
  */

@@ -125,10 +125,10 @@ if ( ! class_exists( 'LP_REST_Courses_Reviews_Controller' ) ) {
 					throw new Exception( esc_html__( 'No review found.', 'learnpress-course-review' ) );
 				}
 
-				$response->data->rated   = ! empty( $course_rate['rated'] ) ? number_format( $course_rate['rated'], 1 ) : 0;
-				$response->data->total   = ! empty( $course_rate['total'] ) ? absint( $course_rate['total'] ) : 0;
-				$response->data->items   = ! empty( $course_rate['items'] ) ? $course_rate['items'] : array();
-				$response->data->reviews = ! empty( $course_review ) ? $course_review : array();
+				$response->data->rated   = $course_rate['rated'] ?? 0;
+				$response->data->total   = $course_rate['total'] ?? 0;
+				$response->data->items   = $course_rate['items'] ?? array();
+				$response->data->reviews = $course_review ?? array();
 
 				//template show more
 				$paged                      = ! empty( $course_review['paged'] ) ? absint( $course_review['paged'] ) : 1;

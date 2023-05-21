@@ -1,6 +1,4 @@
 <?php
-
-global $post, $wpdb;
 $random            = rand( 1, 99 );
 $limit_tab         = $instance['tabs-options']['limit_tab'] ? $instance['tabs-options']['limit_tab'] : 4;
 $cat_id_tab        = $instance['tabs-options']['cat_id_tab'] ? $instance['tabs-options']['cat_id_tab'] : array();
@@ -11,7 +9,7 @@ $featured          = ! empty( $instance['featured'] ) ? true : false;
 $sort              = $instance['order'];
 $thumb_w           = ( ! empty( $instance['thumbnail_width'] ) && '' != $instance['thumbnail_width'] ) ? $instance['thumbnail_width'] : apply_filters( 'thim_course_thumbnail_width', 450 );
 $thumb_h           = ( ! empty( $instance['thumbnail_height'] ) && '' != $instance['thumbnail_height'] ) ? $instance['thumbnail_height'] : apply_filters( 'thim_course_thumbnail_height', 400 );
- 
+
 array_unshift( $cat_id_tab, "0" );
 
 
@@ -85,15 +83,10 @@ if ( ! empty( $cat_id_tab ) ) {
 
 							<?php if ( $i == 0 ) {
 								thim_course_info( false );
-							} ?>
+							}
 
-							<?php if ( class_exists( 'LP_Addon_Coming_Soon_Courses_Preload' ) && learn_press_is_coming_soon( get_the_ID() ) ): ?>
-								<div class="message message-warning learn-press-message coming-soon-message">
-									<?php esc_html_e( 'Coming soon', 'eduma' ) ?>
-								</div>
-							<?php else: 
-								do_action( 'learnpress_loop_item_course_meta' );
-							endif; ?>
+							do_action( 'learnpress_loop_item_course_meta' );
+							?>
 						</div>
 					</div>
 				</div>
@@ -162,7 +155,7 @@ if ( ! empty( $cat_id_tab ) ) {
 	})(jQuery);
 </script>
 <div class="thim_tabs_slider thim-course-grid grid-1">
-	<div class="sc_heading clone_title  text-left">
+	<div class="sc_heading clone_title text-left">
 		<?php if ( $instance['title'] ) { ?>
 			<h2 class="title"><?php echo esc_html( $instance['title'] ); ?></h2>
 			<div class="clone"><?php echo esc_html( $instance['title'] ); ?></div>

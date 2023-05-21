@@ -2,10 +2,10 @@
 Contributors: thimpress, tunnhn, kendy73, leehld
 Donate link:
 Tags: lms, elearning, e-learning, learning management system, education, course, courses, quiz, quizzes, questions, training, guru, sell courses
-Requires at least: 5.8
+Requires at least: 3.8
 Requires PHP: 7.0
-Tested up to: 6.1.1
-Stable tag: 4.0.2
+Tested up to: 6.2
+Stable tag: 4.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,9 @@ Check out <a href="http://docs.thimpress.com/learnpress" target="_blank">LearnPr
 1. LearnPress Export Import screenshot.
 
 == Changelog ==
+
+= 4.0.3 (2023-04-17) =
+~ Fixed: security issue - Cross Site Scripting (XSS), CVE-2023-30487.
 
 = 4.0.2 (2023-01-10) =
 ~ Added: feature import users via CSV.

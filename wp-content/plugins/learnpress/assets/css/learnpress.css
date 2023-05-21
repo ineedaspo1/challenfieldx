@@ -7916,3 +7916,13 @@ ul.list-table-nav .nav-pages .learn-press-pagination {
     overflow-x: auto;
   }
 }
+
+.lp-content-area .order_details {
+  width: 100%;
+  border-collapse: collapse;
+}
+.lp-content-area .order_details th, .lp-content-area .order_details td {
+  text-align: left;
+  padding: 10px 25px;
+  border: 1px solid;
+}

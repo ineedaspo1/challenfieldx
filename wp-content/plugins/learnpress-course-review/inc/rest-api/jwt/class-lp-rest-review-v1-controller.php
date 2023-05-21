@@ -119,10 +119,10 @@ if ( class_exists( 'LP_REST_Jwt_Posts_Controller' ) ) {
 
 				$course_review = learn_press_get_course_review( $course_id, $paged, $per_page, true );
 
-				$response->data->rated   = ! empty( $course_rate['rated'] ) ? number_format( $course_rate['rated'], 1 ) : 0;
-				$response->data->total   = ! empty( $course_rate['total'] ) ? absint( $course_rate['total'] ) : 0;
-				$response->data->items   = ! empty( $course_rate['items'] ) ? $course_rate['items'] : array();
-				$response->data->reviews = ! empty( $course_review ) ? $course_review : array();
+				$response->data->rated   = $course_rate['rated'] ?? 0;
+				$response->data->total   = absint( $course_rate['total'] ?? 0 );
+				$response->data->items   = $course_rate['items'] ?? array();
+				$response->data->reviews = $course_review ?? array();
 
 				$can_review                 = $this->check_can_review( $course_id );
 				$response->data->can_review = $can_review;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Elementor;
 
 use Thim_EL_Kit\Modules\MegaMenu\Main_Walker;
@@ -43,9 +44,10 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 
 		if ( ! empty( $menus ) ) {
 			foreach ( $menus as $menu ) {
-				$output[ $menu->term_id ] = $menu->name;
+				$output[$menu->term_id] = $menu->name;
 			}
 		}
+
 		return $output;
 	}
 
@@ -88,8 +90,8 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekits-menu__container .thim-ekits-menu__nav li::marker'   => 'font-size: 0;',
-					'{{WRAPPER}} .thim-ekits-menu__container .thim-ekits-menu__nav' => 'justify-content: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekits-menu__container .thim-ekits-menu__nav li::marker' => 'font-size: 0;',
+					'{{WRAPPER}} .thim-ekits-menu__container .thim-ekits-menu__nav'            => 'justify-content: {{VALUE}};',
 				),
 			)
 		);
@@ -504,10 +506,6 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 	public function render() {
 		$settings = $this->get_settings_for_display();
 
-		if ( ! Settings::instance()->get_enable_modules( 'megamenu' ) ) {
-			return;
-		}
-
 		if ( ! empty( $settings['menu_id'] ) && is_nav_menu( $settings['menu_id'] ) ) {
 			$args = array(
 				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
@@ -519,20 +517,28 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 				'depth'           => 4,
 				'echo'            => true,
 				'fallback_cb'     => 'wp_page_menu',
-				'walker'          => new Main_Walker(),
+				//				'walker'          => new Main_Walker(),
 			);
+			if ( Settings::instance()->get_enable_modules( 'megamenu' ) ) {
+				$args['walker'] = new Main_Walker();
+			}
+
 			?>
 
 			<div class="thim-ekits-menu">
 				<button class="thim-ekits-menu__mobile">
 					<span class="thim-ekits-menu__mobile__icon thim-ekits-menu__mobile__icon--open">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							 stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								  d="M4 6h16M4 12h16M4 18h16"/>
 						</svg>
 					</span>
 					<span class="thim-ekits-menu__mobile__icon thim-ekits-menu__mobile__icon--close">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+							 stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								  d="M6 18L18 6M6 6l12 12"/>
 						</svg>
 					</span>
 					<!-- <?php esc_html_e( 'Menu', 'thim-elementor-kit' ); ?> -->

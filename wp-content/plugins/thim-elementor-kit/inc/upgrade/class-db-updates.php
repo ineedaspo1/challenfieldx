@@ -68,75 +68,77 @@ class DB_Updates {
 
 		$lists = array( 'entire', 'archive', 'archiveList', 'singular', 'singularList', 'page', 'pageList', '404', 'realpress-agent' );
 
-		foreach ( $posts as $post ) {
-			$conditions = get_post_meta( $post->ID, 'thim_ekits_conditions', true );
-			$conditions = ! empty( $conditions ) ? $conditions : array();
+		if ( ! empty( $posts ) ) {
+			foreach ( $posts as $post ) {
+				$conditions = get_post_meta( $post->ID, 'thim_ekits_conditions', true );
+				$conditions = ! empty( $conditions ) ? $conditions : array();
 
-			foreach ( $lists as $list ) {
-				$data = get_post_meta( $post->ID, 'thim_ekits_cond_' . $list, true );
+				foreach ( $lists as $list ) {
+					$data = get_post_meta( $post->ID, 'thim_ekits_cond_' . $list, true );
 
-				if ( empty( $data ) ) {
-					continue;
+					if ( empty( $data ) ) {
+						continue;
+					}
+
+					switch ( $list ) {
+						case 'entire':
+							$conditions[] = array(
+								'comparison' => 'include',
+								'type'       => 'all',
+								'query'      => null,
+							);
+							break;
+						case 'archiveList':
+							foreach ( $data as $item ) {
+								$conditions[] = array(
+									'comparison' => 'include',
+									'type'       => 'archive_post_type',
+									'query'      => $item,
+								);
+							}
+							break;
+						case 'singularList':
+							foreach ( $data as $item ) {
+								$conditions[] = array(
+									'comparison' => 'include',
+									'type'       => 'singular_post_type',
+									'query'      => $item,
+								);
+							}
+							break;
+						case 'pageList':
+							foreach ( $data as $item ) {
+								$conditions[] = array(
+									'comparison' => 'include',
+									'type'       => 'select_page',
+									'query'      => $item,
+								);
+							}
+							break;
+						case '404':
+							$conditions[] = array(
+								'comparison' => 'include',
+								'type'       => '404_page',
+								'query'      => null,
+							);
+							break;
+						case 'realpress-agent':
+							$conditions[] = array(
+								'comparison' => 'include',
+								'type'       => 'realpress_agent',
+								'query'      => null,
+							);
+							break;
+					}
+
+					delete_post_meta( $post->ID, 'thim_ekits_cond_' . $list );
 				}
 
-				switch ( $list ) {
-					case 'entire':
-						$conditions[] = array(
-							'comparison' => 'include',
-							'type'       => 'all',
-							'query'      => null,
-						);
-						break;
-					case 'archiveList':
-						foreach ( $data as $item ) {
-							$conditions[] = array(
-								'comparison' => 'include',
-								'type'       => 'archive_post_type',
-								'query'      => $item,
-							);
-						}
-						break;
-					case 'singularList':
-						foreach ( $data as $item ) {
-							$conditions[] = array(
-								'comparison' => 'include',
-								'type'       => 'singular_post_type',
-								'query'      => $item,
-							);
-						}
-						break;
-					case 'pageList':
-						foreach ( $data as $item ) {
-							$conditions[] = array(
-								'comparison' => 'include',
-								'type'       => 'select_page',
-								'query'      => $item,
-							);
-						}
-						break;
-					case '404':
-						$conditions[] = array(
-							'comparison' => 'include',
-							'type'       => '404_page',
-							'query'      => null,
-						);
-						break;
-					case 'realpress-agent':
-						$conditions[] = array(
-							'comparison' => 'include',
-							'type'       => 'realpress_agent',
-							'query'      => null,
-						);
-						break;
-				}
-
-				delete_post_meta( $post->ID, 'thim_ekits_cond_' . $list );
+				update_post_meta( $post->ID, 'thim_ekits_conditions', $conditions );
 			}
 
-			update_post_meta( $post->ID, 'thim_ekits_conditions', $conditions );
+			\Thim_EL_Kit\Modules\Cache::instance()->regenerate();
 		}
-
-		\Thim_EL_Kit\Modules\Cache::instance()->regenerate();
 	}
 
 	public function update_110_db_version() {

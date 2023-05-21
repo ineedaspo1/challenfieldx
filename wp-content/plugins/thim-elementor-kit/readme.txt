@@ -3,9 +3,9 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: page builder, elementor, elementorkit, thimpress.
 Requires at least: 5.2
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 1.1.1
+Stable tag: 1.1.3
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,14 @@ Powerful as Elementor but free, Thim-Kit is the best choice for your website, es
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 1.1.3 =
+- Fixed: error widget Nav Menu not show when disable setting Mega Menu.
+- Update: swiper testimonial.
+
+= 1.1.2 =
+- Fixed: error updates data.
+
 = 1.1.1 =
 - Added: Options select layout for widget Product Tabs
 - Fixed: Swiper slider not working with lats version of Elementor

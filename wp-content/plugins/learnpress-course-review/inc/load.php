@@ -52,7 +52,7 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 		 */
 		protected function _define_constants() {
 			define( 'LP_ADDON_COURSE_REVIEW_PATH', dirname( LP_ADDON_COURSE_REVIEW_FILE ) );
-			define( 'LP_ADDON_COURSE_REVIEW_PER_PAGE', apply_filters( 'learn-press/course-review/per-page', 1 ) );
+ 			define( 'LP_ADDON_COURSE_REVIEW_PER_PAGE', apply_filters( 'learn-press/course-review/per-page', 5 ) );
 			define( 'LP_ADDON_COURSE_REVIEW_TMPL', LP_ADDON_COURSE_REVIEW_PATH . '/templates/' );
 			//define( 'LP_ADDON_COURSE_REVIEW_THEME_TMPL', learn_press_template_path() . '/addons/course-review/' );
 			define( 'LP_ADDON_COURSE_REVIEW_URL', untrailingslashit( plugins_url( '/', dirname( __FILE__ ) ) ) );
@@ -505,7 +505,7 @@ if ( ! function_exists( 'LP_Addon_Course_Review' ) ) {
 
 				// Calculate average rating.
 				$rating_average  = $rating_rs->total ? $total_rating / $rating_rs->total : 0;
-				$rating['rated'] = $rating_average;
+				$rating['rated'] = floor( $rating_average );
 
 				// Set cache
 				$lp_course_review_cache->set_rating( $course_id, json_encode( $rating ) );

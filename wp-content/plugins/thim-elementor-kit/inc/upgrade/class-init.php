@@ -18,14 +18,7 @@ class Init {
 	);
 
 	public function __construct() {
-		if ( ! class_exists( '\Thim_EL_Kit\Upgrade\Background_Process', false ) ) {
-			include_once THIM_EKIT_PLUGIN_PATH . 'inc/upgrade/class-updater.php';
-		}
-
-		self::$background_updater = new Updater();
-
 		add_action( 'init', array( $this, 'maybe_update_db_version' ), 5 );
-		add_action( 'admin_notices', array( $this, 'admin_notice' ) );
 	}
 
 	public function maybe_update_db_version() {
@@ -41,20 +34,21 @@ class Init {
 	}
 
 	private function update() {
+		if ( ! class_exists( '\Thim_EL_Kit\Upgrade\DB_Updates', false ) ) {
+			include_once THIM_EKIT_PLUGIN_PATH . 'inc/upgrade/class-db-updates.php';
+		}
+
 		$current_db_version = get_option( 'thim_ekit_db_version' );
-		$update_queued      = false;
 
 		foreach ( self::$db_updates as $version => $update_callbacks ) {
 			if ( version_compare( $current_db_version, $version, '<' ) ) {
 				foreach ( $update_callbacks as $update_callback ) {
-					self::$background_updater->push_to_queue( $update_callback );
-					$update_queued = true;
+					if ( method_exists( '\Thim_EL_Kit\Upgrade\DB_Updates', $update_callback ) ) {
+						error_log( 'Thim Elementor Kit: Running ' . $update_callback );
+						\Thim_EL_Kit\Upgrade\DB_Updates::instance()->{$update_callback}();
+					}
 				}
 			}
-		}
-
-		if ( $update_queued ) {
-			self::$background_updater->save()->dispatch();
 		}
 	}
 
@@ -66,16 +60,6 @@ class Init {
 
 	public function update_db_version() {
 		update_option( 'thim_ekit_db_version', THIM_EKIT_VERSION );
-	}
-
-	public function admin_notice() {
-		if ( self::$background_updater->is_updating() ) {
-			?>
-			<div class="notice notice-info">
-				<p><?php esc_html_e( 'Thim Elementor Kit is updating the database in the background.', 'thim-elementor-kit' ); ?></p>
-			</div>
-			<?php
-		}
 	}
 }
 Init::instance();

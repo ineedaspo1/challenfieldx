@@ -105,6 +105,10 @@ class Thim_Customize_Options {
 			include $DIR . 'course-collection.php';
 		}
 
+		if ( class_exists( 'LP_Addon_Upsell_Preload' ) ) {
+			include $DIR . 'course-package.php';
+		}
+
 		if ( class_exists( 'Thim_Portfolio' ) ) {
 			include $DIR . 'portfolio.php';
 			include $DIR . 'portfolio-archive.php';

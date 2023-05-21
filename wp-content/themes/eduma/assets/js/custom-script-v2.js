@@ -647,23 +647,23 @@ var can_escape = true;
     })
   })
 
-  $(document).on('click', '.single-lp_course .course-meta .course-review .value',
-      function () {
-        var review_tab = $('.course-tabs a[href="#tab-course-review"]')
-        if (review_tab.length > 0) {
-          review_tab.trigger('click')
-          $('body, html').animate({
-            scrollTop: review_tab.offset().top - 50,
-          }, 800)
-        }
-        var review_tab_v3 = $('.course-tabs a[href="#tab-reviews"]')
-        if (review_tab_v3.length > 0) {
-          review_tab_v3.trigger('click')
-          $('body, html').animate({
-            scrollTop: review_tab_v3.offset().top - 50,
-          }, 800)
-        }
-      })
+  // $(document).on('click', '.single-lp_course .course-meta .course-review .value',
+  //     function () {
+  //       var review_tab = $('.course-tabs a[href="#tab-course-review"]')
+  //       if (review_tab.length > 0) {
+  //         review_tab.trigger('click')
+  //         $('body, html').animate({
+  //           scrollTop: review_tab.offset().top - 50,
+  //         }, 800)
+  //       }
+  //       var review_tab_v3 = $('.course-tabs a[href="#tab-reviews"]')
+  //       if (review_tab_v3.length > 0) {
+  //         review_tab_v3.trigger('click')
+  //         $('body, html').animate({
+  //           scrollTop: review_tab_v3.offset().top - 50,
+  //         }, 800)
+  //       }
+  //     })
 
   //Widget live search course
   var search_timer = false

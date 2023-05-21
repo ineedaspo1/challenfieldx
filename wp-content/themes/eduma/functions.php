@@ -8,7 +8,7 @@
 define( 'THIM_DIR', trailingslashit( get_template_directory() ) );
 define( 'THIM_URI', trailingslashit( get_template_directory_uri() ) );
 
-const THIM_THEME_VERSION = '5.2.0';
+const THIM_THEME_VERSION = '5.2.5';
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -81,7 +81,7 @@ if ( ! function_exists( 'thim_setup' ) ) :
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'thim-core' );
 
-//		add_theme_support( 'eduma-demo-data' );
+		//		add_theme_support( 'eduma-demo-data' );
 		add_theme_support( 'thim-full-widgets' );
 		/*
 		* Enable support for Post Formats.
@@ -400,7 +400,6 @@ function thim_get_theme_option( $name = '', $value_default = '' ) {
 function thim_get_option_var_css() {
 	$css           = '';
 	$theme_options = array(
-
 		// hearder
 		'thim_body_primary_color'   => '#ffb606',
 		'thim_body_secondary_color' => '#4caf50',
@@ -637,13 +636,10 @@ if ( ! function_exists( 'thim_styles' ) ) {
 		wp_register_style( 'font-pe-icon-7', THIM_URI . 'assets/css/font-pe-icon-7.css' );
 		wp_register_style( 'flaticon', THIM_URI . 'assets/css/flaticon.css' );
 		wp_deregister_style( 'thim-ekit-font-icon' );
-		wp_enqueue_style( 'elementor-icons-thim-ekits-fonts', THIM_URI . 'assets/css/thim-ekits-icons.min.css', array(), THIM_THEME_VERSION );
 
-		//Load style for page builder Visual Composer
-		$page_builder = get_theme_mod( 'thim_page_builder_chosen', '' );
-		if ( $page_builder === 'visual_composer' ) {
-			wp_enqueue_style( 'thim-custom-vc', THIM_URI . 'assets/css/custom-vc.css', array(), THIM_THEME_VERSION );
-		}
+		wp_register_style( 'thim-portfolio', THIM_URI . 'assets/css/libs/portfolio.css', array(), THIM_THEME_VERSION );
+
+		wp_enqueue_style( 'elementor-icons-thim-ekits-fonts', THIM_URI . 'assets/css/thim-ekits-icons.min.css', array(), THIM_THEME_VERSION );
 
 		wp_enqueue_style( 'thim-style', get_stylesheet_uri(), array(), $v_asset );
 
@@ -652,9 +648,8 @@ if ( ! function_exists( 'thim_styles' ) ) {
 				array( '/\s*(\w)\s*{\s*/', '/\s*(\S*:)(\s*)([^;]*)(\s|\n)*;(\n|\s)*/', '/\n/', '/\s*}\s*/' ),
 				array( '$1{ ', '$1$3;', "", '} ' ), thim_get_option_var_css()
 			) . '}';
-		// get custom css
-		$css_line .= trim( get_theme_mod( 'thim_custom_css' ) );
 		$css_line .= trim( thim_custom_color_header_single_page() );
+		$css_line .= apply_filters( 'thim_custom_internal_css', '' );
 		wp_add_inline_style(
 			'thim-style', $css_line
 		);
@@ -696,13 +691,11 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 
 		wp_enqueue_script( 'thim-main', THIM_URI . 'assets/js/main.min.js', array( 'jquery', 'imagesloaded' ), THIM_THEME_VERSION, true );
 
-
 		if ( get_theme_mod( 'thim_smooth_scroll', true ) ) {
 			wp_enqueue_script( 'thim-smooth-scroll', THIM_URI . 'assets/js/smooth_scroll.min.js', array( 'jquery' ), THIM_THEME_VERSION, true );
 		}
 
 		wp_enqueue_script( 'thim-custom-script', THIM_URI . 'assets/js/custom-script-v2' . $min . '.js', array( 'jquery' ), $v_asset, true );
-
 
 		// thim archive api v2
 		if ( thim_is_new_learnpress( '4.1.6' ) ) {
@@ -727,9 +720,11 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 			)
 		);
 
+
 		if ( get_post_type() == 'portfolio' && ( is_category() || is_archive() || is_singular( 'portfolio' ) ) ) {
 			wp_enqueue_script( 'thim-portfolio-appear' );
 			wp_enqueue_script( 'thim-portfolio-widget' );
+			wp_enqueue_style( 'thim-portfolio' );
 		}
 
 		wp_dequeue_script( 'framework-bootstrap' );
@@ -751,7 +746,6 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 			wp_dequeue_script( 'course-review' );
 			wp_dequeue_style( 'course-review' );
 		}
-
 
 		wp_dequeue_style( 'learn-press-pmpro-style' );
 		wp_dequeue_style( 'learn-press-jalerts' );
@@ -798,7 +792,6 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 			wp_dequeue_script( 'bbpress-editor' );
 		}
 
-
 		//LearnPress 2.0
 		wp_dequeue_style( 'owl_carousel_css' );
 		wp_dequeue_style( 'learn-press-coming-soon-course' );
@@ -808,6 +801,7 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 		if ( get_post_type() == 'tp_event' && is_single() ) {
 			$dequeue_style_event = false;
 		}
+
 		if ( $dequeue_style_event ) {
 			wp_dequeue_style( 'wpems-countdown-css' );
 			wp_dequeue_style( 'wpems-owl-carousel-css' );
@@ -830,11 +824,11 @@ if ( ! function_exists( 'thim_scripts' ) ) {
 			wp_dequeue_script( 'wc-cart-fragments' );
 			wp_dequeue_script( 'woocommerce' );
 			wp_dequeue_script( 'jquery-blockui' );
-		}
+ 		}
+
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thim_scripts', 1000 );
-
 function thim_custom_admin_scripts() {
 	wp_enqueue_script( 'thim-admin-custom-script', THIM_URI . 'assets/js/admin-custom-script.js', array( 'jquery' ), THIM_THEME_VERSION, true );
 	wp_enqueue_style( 'thim-admin-theme-style', THIM_URI . 'assets/css/thim-admin.css', array(), THIM_THEME_VERSION );
@@ -892,21 +886,6 @@ add_filter( 'siteorigin_premium_upgrade_teaser', '__return_false' );
 //For use thim-core
 require_once THIM_DIR . 'inc/thim-core-function.php';
 
-//require_once THIM_DIR . 'inc/upgrade.php';
-
-add_filter( 'thim_register_multiple_variants', 'thim_register_multiple_variants' );
-
-if ( ! function_exists( 'thim_register_multiple_variants' ) ) {
-	function thim_register_multiple_variants() {
-		// multiple variants want to add
-		if ( ! empty( get_theme_mod( 'thim_multiple_variants_fonts', true ) ) ) {
-			return get_theme_mod( 'thim_multiple_variants_fonts' );
-		} else {
-			return;
-		}
-	}
-}
-
 add_filter( 'thim_ekit/mega_menu/menu_container/class', function () {
 	return 'header .thim-nav-wrapper .tm-table';
 } );
@@ -925,4 +904,3 @@ if ( defined( 'THIM_CORE_VERSION' ) && version_compare( THIM_CORE_VERSION, '2.1.
 	// Breadcrumb
 	require_once THIM_DIR . 'inc/libs/thim-breadcrumb.php';
 }
-

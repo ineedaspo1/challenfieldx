@@ -4,7 +4,7 @@
  * Plugin URI: http://thimpress.com/learnpress
  * Description: Export and Import your courses with all lesson and quiz in easiest way.
  * Author: ThimPress
- * Version: 4.0.2
+ * Version: 4.0.3
  * Author URI: http://thimpress.com
  * Tags: learnpress, lms, add-on, prerequisites courses
  * Text Domain: learnpress-import-export

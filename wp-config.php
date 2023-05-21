@@ -1,11 +1,4 @@
 <?php
-
-// BEGIN iThemes Security - Do not modify or remove this line
-// iThemes Security Config Details: 2
-define( 'FORCE_SSL_ADMIN', true ); // Redirect All HTTP Page Requests to HTTPS - Security > Settings > Enforce SSL
-define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
-// END iThemes Security - Do not modify or remove this line
-
 /**
  * The base configuration for WordPress
  *
@@ -35,12 +28,12 @@ define( 'DB_USER', 'root' );
 
 /** Database password */
 define( 'DB_PASSWORD', 'root' );
-define('WP_MEMORY_LIMIT', '1024M');
+
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
 
 /** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
@@ -56,15 +49,6 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',          'V<vAc]x&0Ej4_;ib*1 ,78_C#pQ)0y$hQfvjcdpjXJL4D$-f %:y BpJDo|[Of6v' );
-define( 'SECURE_AUTH_KEY',   '<0)W%pz86:P?Lr5>!<deHcucO(|vXt(nSI$-^>dKykZP}N(A,hR+S<R!N[PV)XLW' );
-define( 'LOGGED_IN_KEY',     ')1Nj&04l*F]mIay2U,eZ&JH(F4y>CNz,/tML&3mb6HtCBTnR?L3yM!v:`X8bM8*]' );
-define( 'NONCE_KEY',         'NZM1/$v7YWD83< GX0S[h;|$#KzvFjBS-?6m]lU<G6ZP2B]5Y>y{F||aXUID94eo' );
-define( 'AUTH_SALT',         'bfam$<~^FUKiyjcJ#R;_g!+ W;5Yc$ifUe^l:_GhPX1.Md?a(hEbENiUzziM@@R!' );
-define( 'SECURE_AUTH_SALT',  '.^lJ4Q56Hv0rgTVa8Y!GdNdiiv,5[g%;9vO^u_/BoK, actp]s-n(F82}ALt;3t1' );
-define( 'LOGGED_IN_SALT',    'VynyxZh=n2cJ1f{Gw#1Hiw?(22-,j[Be;E4afBm{?7||?IaX#G&A-RR7t<9&2I7&' );
-define( 'NONCE_SALT',        'q<T; DAq$iUe4A`9C!1N~oS$!;sav3<vX@8q[:$#|?[GZ kHaG=YbT(D_Z:7|F{7' );
-define( 'WP_CACHE_KEY_SALT', '/.d^?S:f<tlh%LKFP;pvk0n/Sdv|jW`F?TUH#C2ee;8/z#J!Em&LOfTw*(A:YT/L' );
 
 
 /**#@-*/
@@ -75,7 +59,7 @@ define( 'WP_CACHE_KEY_SALT', '/.d^?S:f<tlh%LKFP;pvk0n/Sdv|jW`F?TUH#C2ee;8/z#J!Em
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'ue1_';
+$table_prefix = 'lo42f79t5t_';
 
 
 /* Add any custom values between this line and the "stop editing" line. */
@@ -95,15 +79,9 @@ $table_prefix = 'ue1_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG', false );
 }
 
-define( 'WP_DEBUG_DISPLAY', false );
-define( 'WP_DEBUG_LOG', true );
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'DISABLE_WP_CRON', true );
-define( 'WP_MEMORY_LIMIT', '256M' );
-set_time_limit(30000);
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

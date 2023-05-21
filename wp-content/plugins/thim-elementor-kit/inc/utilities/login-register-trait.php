@@ -206,7 +206,7 @@ trait LoginRegisterTrait {
 		if ( ( isset( $_POST['register_auto_login'] ) && $_POST['register_auto_login'] == '1' ) || wp_doing_ajax() || ! isset( $_POST['thim_register_user'] ) ) {
 			return;
 		}
- 		if ( ! empty( $_REQUEST['redirect_to'] ) ) {
+		if ( ! empty( $_REQUEST['redirect_to'] ) ) {
 			$redirect_url = $_REQUEST['redirect_to'];
 		} else {
 			$redirect_url = $this->thim_get_current_url();

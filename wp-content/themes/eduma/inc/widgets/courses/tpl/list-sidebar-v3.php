@@ -1,44 +1,6 @@
 <?php
-global $post;
-$limit    = $instance['limit'];
-$sort     = $instance['order'];
-$featured = ! empty( $instance['featured'] ) ? true : false;
 
-$condition = array(
-	'post_type'           => 'lp_course',
-	'posts_per_page'      => $limit,
-	'ignore_sticky_posts' => true,
-);
-
-if ( $sort == 'category' && $instance['cat_id'] && $instance['cat_id'] != 'all' ) {
-	if ( get_term( $instance['cat_id'], 'course_category' ) ) {
-		$condition['tax_query'] = array(
-			array(
-				'taxonomy' => 'course_category',
-				'field'    => 'term_id',
-				'terms'    => $instance['cat_id']
-			),
-		);
-	}
-}
-
-if ( $sort == 'popular' ) {
-    $post_in = eduma_lp_get_popular_courses( $limit );
-
-    $condition['post__in'] = $post_in;
-	$condition['orderby']  = 'post__in';
-}
-
-if ( $featured ) {
-	$condition['meta_query'] = array(
-		array(
-			'key'   => '_lp_featured',
-			'value' => 'yes',
-		)
-	);
-}
-
-$condition = apply_filters( 'eduma/inc/widgets/courses/list-sidebar-v3/query_args', $condition );
+$condition = apply_filters( 'eduma/inc/widgets/courses/list-sidebar-v3/query_args', $args['condition'] );
 
 $the_query = new WP_Query( $condition );
 
@@ -54,7 +16,7 @@ if ( $the_query->have_posts() ) :
 			<div class="lpr_course <?php echo has_post_thumbnail() ? 'has-post-thumbnail' : ''; ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
-					$src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
+					$src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'thumbnail' );
 					echo '<div class="course-thumbnail">';
 					echo '<img src="' . esc_url( $src[0] ) . '" alt="' . get_the_title() . '"/>';
 					echo '</div>';
@@ -69,7 +31,7 @@ if ( $the_query->have_posts() ) :
 							<?php esc_html_e( 'Coming soon', 'eduma' ) ?>
 						</div>
 					<?php else: ?>
-						<?php do_action('learnpress_loop_item_price'); ?>
+						<?php do_action( 'learnpress_loop_item_price' ); ?>
 					<?php endif; ?>
 				</div>
 			</div>

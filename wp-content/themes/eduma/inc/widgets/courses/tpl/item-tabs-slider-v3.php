@@ -1,7 +1,5 @@
 <?php
-global $post, $wpdb;
 $random                     = rand( 1, 99 );
-$theme_options_data         = get_theme_mods();
 $course_item_excerpt_length = intval( get_theme_mod( 'thim_learnpress_excerpt_length', 25 ) );
 $style                      = isset( $instance['item_tab_slider_style'] ) ? $instance['item_tab_slider_style'] : 'style_1';
 $cat_id_tab                 = $instance['tabs-options']['cat_id_tab'] ? $instance['tabs-options']['cat_id_tab'] : array();
@@ -79,7 +77,7 @@ if ( ! empty( $cat_id_tab ) ) {
 								}
 								?>
 							</a>
-							 
+
 							<?php
 							if ( $style == 'style_2' ) {
 								do_action('learnpress_loop_item_price');

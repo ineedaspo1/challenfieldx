@@ -19,14 +19,6 @@ $tabs = learn_press_get_course_tabs();
 if ( empty( $tabs ) ) {
 	return;
 }
-
-$thim_course_payment = true;
-if ( class_exists( 'LP_Addon_Coming_Soon_Courses' ) ) {
-	$instance_addon = LP_Addon_Coming_Soon_Courses::instance();
-	if ( $instance_addon->is_coming_soon( get_the_ID() ) && 'no' == get_post_meta( get_the_ID(), '_lp_coming_soon_metadata', true ) ) {
-		$thim_course_payment = false;
-	}
-}
 ?>
 
 <div class="thim-course-menu-landing">
@@ -45,7 +37,7 @@ if ( class_exists( 'LP_Addon_Coming_Soon_Courses' ) ) {
 			<?php } ?>
 		</ul>
 
-		<?php if ( $thim_course_payment ) {
+		<?php if ( thim_show_meta_course_coming_soon() ) {
 			echo '<div class="thim-course-landing-button">';
 			do_action( 'thim_single_course_payment' );
 			echo '</div>';
