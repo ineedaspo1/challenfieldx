@@ -5,7 +5,7 @@ This is an  WordPress eLearning site created as an alternative option for future
 285 West Wieuca Road NE #5547​,
 Atlanta, GA 30342​
 
-It contains a eduma based theme  and the ability to that interface with brightspace through saml. Please note that this projects payment system has undergone alot of updatesrecently and should not be used unless througly tested. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
+It contains a eduma based theme  and the ability to interface with brightspace through saml. Please note that this projects payment system has undergone alot of updatesrecently and should not be used unless througly tested. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
 to date. project contributors include michael hartman chaz mcgowan chaz@uplasvegas.com 3rd party dev team discussionforall@gmail.com Dhanashree ddcan2022@gmail.com sharyn Outtrim sharyn@myfieldx.com  and sean baker sean@myfieldx.com more details on  these users can be found inside the database. 
  
 
