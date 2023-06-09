@@ -2,10 +2,8 @@
 
 
 
-It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
-to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx,  unfortunately during the process of development files were altered leading to several patches of the paid membership pro software these patches have not yet been released so use of this software is not reccomended until such time see https://github.com/strangerstudios/paid-memberships-pro/pull/2468, this appeared to be the result of a breach in security of the website while it was under development. 
-
-
+It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is in the development phase, this is do to security bugs found in the paid memberships pro software these patches have not yet been released so use of this software is not reccomended until such time see https://github.com/strangerstudios/paid-memberships-pro/pull/2468, the security bug was detected by by the repository contributors during development. 
+to date.  Original Repository exists at https://github.com/ineedaspo1/challenfieldx. 
 ## Features
 
 - Basic eLearning functionalities.
