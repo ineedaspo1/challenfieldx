@@ -2,9 +2,9 @@
 
 
 
-It contains a eduma based theme  and the ability to interface with brightspace through saml. Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
-to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx, unfortunately during the process of development files were altered leading to several patches of the paid membership pro software these patches have not yet been released so use of this software is not reccomended, this appeared to be the result of a breach in security of the website while it was under development. 
- 
+It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
+to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx,  unfortunately during the process of development files were altered leading to several patches of the paid membership pro software these patches have not yet been released so use of this software is not reccomended, this appeared to be the result of a breach in security of the website while it was under development. 
+
 
 ## Features
 
@@ -72,5 +72,5 @@ to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx
 
 ## License
 
-- These projects components are licensed under a variety of different licensed and therefore it has not been licensed yet. The repositories owner can decide to place a license 
+- These projects components are licensed under a variety of different licensed and therefore the unique ip has not been licensed yet and will require. The repositories owner can decide to place a license 
 - on the repo if they intent to use it for commercial purposes. 
