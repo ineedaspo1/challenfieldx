@@ -54,13 +54,15 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 - This wordpress based  eLearning site is provided as-is.
 - Use this site at your own risk.
 - The developers are not responsible for any issues, vulnerabilities, or damages that may occur while using this site.
-- - Developers are not responsible for any fraudulent activity and do not codone the usage of this site. 
-- - It is recommended to implement additional security measures, thoroughly review and test the code, and ensure compatibility with existing regulations and or contractuactual stipulations before deploying it to a production environment.
+ - Developers are not responsible for any fraudulent activity and do not codone the usage of this site. 
+ - It is recommended to implement additional security measures, thoroughly review and test the code, and ensure compatibility with existing regulations and or contractuactual stipulations before deploying it to a production environment.
 - The developers are not responsible for any data collected using this software and are not responsible for any licenses or private information that got put in the code, the contributors of this github did not add oauth keys, stripe keys or any other kind of api key that information should be stored seperately  it is recommended you rotate all software keys before using this software. 
 - It is your responsibility to ensure compliance with applicable regulations, standards, and legal requirements if you choose to use this project.
 - The developers disclaim any liability and assume no responsibility for any consequences resulting from the use of this project, including non-compliance with any specific regulations or standards.
 - It is recommended to consult with legal and compliance professionals as well as a qualified third party development team to assess and address any compliance requirements before deploying this project in a production environment.
--Developers are not responsible for any modification software that is closed source, any usage of illegaly modified software including modification of payment software, or any other kind of software related to private copyright or confidential information
+-Developers are not responsible for any modification software that is closed source, any usage of illegaly modified software including modification of payment software. 
+-Developers are not responsible for any kind of items found in this repo related to private, copyright, trademark or confidential information
+
 ## Contributing
 
 - Contributions to this project are welcome.
