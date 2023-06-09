@@ -48,7 +48,7 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 - **Regular backups**: Maintain regular backups of the entire WordPress site and database to recover in case of any issues or data loss.
 - **Test thoroughly**: Conduct thorough testing of the site's functionality, security, and performance before deploying it to a production environment.
 - **Report vulnerabilities**: If you discover any security vulnerabilities or issues, please report them responsibly to the project maintainers.
-- - **Any usage of this project**:  should not violate any contractual agreements or legal obligations.
+
 
 
 ## Disclaimer
@@ -57,7 +57,6 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 - Use this site at your own risk.
 - The developers are not responsible for any issues, vulnerabilities, or damages that may occur while using this site.
 - - It is recommended to implement additional security measures, thoroughly review and test the code, and ensure compatibility with existing contracts before deploying it to a production environment.
-- This project is not PCI compliant or compliant with any other specific standards or regulations.
 - It is your responsibility to ensure compliance with applicable regulations, standards, and legal requirements if you choose to use this project.
 - The developers disclaim any liability and assume no responsibility for any consequences resulting from the use of this project, including non-compliance with any specific regulations or standards.
 - It is recommended to consult with legal and compliance professionals to assess and address any compliance requirements before deploying this project in a production environment.
