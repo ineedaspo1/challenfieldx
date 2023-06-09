@@ -4,10 +4,10 @@ It contains a eduma based theme  and the ability to interface with brightspace t
 to date.  Original Repository exists at https://github.com/ineedaspo1/challenfieldx. 
 
 
-Project contributors include Sharyn Jaime Frtiz (jamie@fritzmartin.com), Chaz Mcgowan chaz@uplasvegas.com, Jennifer Castrataro, jenn@fritzmartin.com, Leigh Newbigging Leigh@myfieldx.com, Michael Hartman (Michael.p.hartman@gmail.com), Discussionforall@gmail.com, admin@myfieldx.com, becky sullivan (becky@myfieldx.com). During the development of this site 12 different I.P addresses were logged using the site as administrators,  they are stored on a secure location, I.Ps logged before the first launch in January are also stored in a secure location. 
+Project contributors include Sharyn Jaime Frtiz (jamie@fritzmartin.com), Chaz Mcgowan chaz@uplasvegas.com, Jennifer Castrataro, jenn@fritzmartin.com, Leigh Newbigging Leigh@myfieldx.com, Michael Hartman (Michael.p.hartman@gmail.com), Discussionforall@gmail.com, admin@myfieldx.com, becky sullivan (becky@myfieldx.com). Project Developers include Sean Baker (cos30degrees@gmail.com)
 
 
-Regrettably, during the development of this project, security breaches were detected as outlined above, and unauthorized modifications were made to certain files. Since the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not receiving compensation during this period, and as there is no existing documentation or contracts signed by the developer.  As per copyright law, the author of a line of software code is generally considered the copyright owner. Consequently, these circumstances could potentially expose Sean Baker to substantial liability and legal action due to undisclosed third-party contractual agreements and related documentation. In order to address these concerns adequately, the following disclaimers must be provided. For the purpose of this discussion, the term 'Developer' refers to Sean Baker." and User refers to Contributors of repository If any Contributor is not Fieldxperience LLC they are required to notify Developer immediatly. 
+Regrettably, during the development of this project, security breaches were detected as outlined above, and unauthorized modifications were made to certain files. Since the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not receiving compensation during this period, and as there is no existing documentation or contracts signed by the developer.  As per copyright law, the author of a line of software code is generally considered the copyright owner. Consequently, these circumstances could potentially expose Sean Baker to substantial liability and legal action due to undisclosed third-party contractual agreements and related documentation. In order to address these concerns adequately, the following disclaimers must be provided. For the purpose of this discussion, the term 'Developer' refers to Sean Baker." and User refers to Contributors of repository If any Contributor is not Fieldxperience LLC they are required to notify Developer immediatly. This project is solely to be used on fieldxperience LLC. 
 
 
 ## Disclaimer And Legal Requirements
@@ -29,10 +29,10 @@ Regrettably, during the development of this project, security breaches were dete
 - **Users explicitly waive their right to file any legal claims or lawsuits against the Developer related to the use, implementation, or consequences of this software.
 - **Any changes to said repo must be approved by Developer in the form of a pull request
 - **If the User subsidary of another company  company they must remove access to this repository. If a User accepts access to this repository they must email Developer cos30degrees@gmail.com
-- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users removes access from repository it will be pushed into the public domain and users will forfeit exclusive rights to said software 
+- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . User can add their name below to aknowledge they understand and accept these terms, user is required to be an agent of fieldxperience LLC. If users removes access from repository it will be pushed into the public domain and users will forfeit exclusive rights to said software . 
 
 
-
+_________________________
 
 
 ## Features
