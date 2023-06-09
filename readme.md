@@ -2,7 +2,7 @@
 
 Project contributors include Sharyn Jaime Frtiz (jamie@fritzmartin.com), Chaz Mcgowan chaz@uplasvegas.com, Jennifer Castrataro, jenn@fritzmartin.com, Leigh Newbigging Leigh@myfieldx.com, Michael Hartman (Michael.p.hartman@gmail.com), Discussionforall@gmail.com, admin@myfieldx.com, becky sullivan (becky@myfieldx.com). During the development of this site 12 different I.P addresses were logged using the site as administrators,  they are stored on a secure location, I.Ps logged before the first launch in January are also stored in a secure location. 
 
-Unfortunately during the development of this project security breaches were detected and files were modified that should not have been modified, since the repo contributor paragonsean\ineedaspo1 (sean baker) was not being compensated during this time and has no documentation discussing the ownership of ip, it unfortunately  Under copyright law, the author of a line of software code is the owner of the copyright. As this opens Sean Baker to massive liability and or possible lawsuits due to third party contractual agreements and or documentation he is unaware of, the following disclaimers must be given. Developers refers to Sean Baker. 
+Regrettably, during the development of this project, security breaches were detected, and unauthorized modifications were made to certain files. It has come to our attention that the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not receiving compensation during this period, and there is no existing documentation clarifying the ownership of intellectual property rights. As per copyright law, the author of a line of software code is generally considered the copyright owner. Consequently, these circumstances could potentially expose Sean Baker to substantial liability and legal action due to undisclosed third-party contractual agreements and related documentation. In order to address these concerns adequately, the following disclaimers must be provided. For the purpose of this discussion, the term 'Developers' refers to Sean Baker."
 
 
 ## Disclaimer And Legal Requirements
@@ -21,10 +21,11 @@ Unfortunately during the development of this project security breaches were dete
 Ensuring compliance with applicable regulations, standards, legal requirements, statements of work, and third-party contracts is the sole responsibility of the user and not the developer.
 - **Prior to deploying this project in a production environment, it is strongly recommended to consult legal and compliance professionals, as well as a qualified third-party development team, to assess and address any compliance requirements.
 - **The developer disclaims responsibility for any modifications made to closed-source software or any usage of illegally modified software, including the modification of payment software.
-- **Fieldxperience LLC is required to  inform the developer of any document contradicting or undermining any of these disclaimers within 14 days of reading this document. 
+- **Fieldxperience LLC is required to  inform the developer of any document contradicting or undermining any of these disclaimers within 14 days of accessing this repo
 - **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential - **information.
-- **If any changes to said repo must be approved by Developer
-- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users remove access to this softwar it will be pushed into the public domain and users will forfeit exclusive rights to said software 
+- **Users explicitly waive their right to file any legal claims or lawsuits against the Developer related to the use, implementation, or consequences of this software.
+- **Any changes to said repo must be approved by Developer in the form of a pull request
+- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users remove access to this software it will be pushed into the public domain and users will forfeit exclusive rights to said software 
 
 
 
