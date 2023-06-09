@@ -7,7 +7,7 @@ Aka hello@myfieldx.com
 Atlanta, GA 30342​
 
 It contains a eduma based theme  and the ability to interface with brightspace through saml. Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
-to date. project contributors include michael hartman Michael.p.hartman@gmail.com chaz mcgowan chaz@uplasvegas.com 3rd party dev team discussionforall@gmail.com Dhanashree ddcan2022@gmail.com   and sean baker sean@cos30degrees@gmail.com. 
+to date.  
  
 
 ## Features
