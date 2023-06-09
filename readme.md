@@ -3,7 +3,7 @@
 
 
 It contains a eduma based theme  and the ability to interface with brightspace through saml. Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
-to date.  
+to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx, unfortunately during the process of development files were altered leading to several patches of the paid membership pro software, this appeared to be the result of a breach in security of the website while it was under development. 
  
 
 ## Features
