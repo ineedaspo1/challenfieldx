@@ -54,6 +54,7 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 - This wordpress based  eLearning site is provided as-is.
 - Use this site at your own risk.
 - The developers are not responsible for any issues, vulnerabilities, or damages that may occur while using this site.
+- - Developers are not responsible for any fraudulent activity and do not codone the usage of this site. 
 - - It is recommended to implement additional security measures, thoroughly review and test the code, and ensure compatibility with existing contracts before deploying it to a production environment.
 - It is your responsibility to ensure compliance with applicable regulations, standards, and legal requirements if you choose to use this project.
 - The developers disclaim any liability and assume no responsibility for any consequences resulting from the use of this project, including non-compliance with any specific regulations or standards.
