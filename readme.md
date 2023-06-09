@@ -38,7 +38,7 @@ Regrettably, during the course of this project's development, security breaches 
 - **User is required to  inform the developer of any document contradicting or undermining any of these disclaimers  after reading this disclaimer. 
 - **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential  information.
 - **Users explicitly waive their right to file any legal claims or lawsuits against the Developer related to the use, implementation, or consequences of this software.
-- **Any changes to said repo must be approved by Developer in the form of a pull request
+- **Any changes to said repo must be approved by Developer in the form of a pull request until such time as the document is signed by adding their name at the bottom of this document
 - **If the User subsidary of another company  company they must remove access to this repository. If a User accepts access to this repository they must email Developer cos30degrees@gmail.com
 - **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . User can add their name below to aknowledge they understand and accept these terms, user is required to be an agent of fieldxperience LLC. If users removes access from repository it will be pushed into the public domain and users will forfeit exclusive rights to said software . 
 
