@@ -9,23 +9,22 @@ Regrettably, during the development of this project, security breaches were dete
 
 - **This GitHub repository (hereafter referred to as "repo") is provided "as-is" without any warranties, express or implied. The developer explicitly disclaims all implied warranties, including any warranty of merchantability and fitness. 
 - **The developer shall not be held liable for any consequences arising from the use of this repo, including non-compliance with specific regulations or standards.
-- **The developer assumes no responsibility for any usage of the repo that involves copyrighted materials under their ownership subsequent to 10/22/2022.
 - **Any damages covered by Merchant Fraud Insurance and Errors and Omissions insurance are exempted from the developer's responsibility.
 - **The developer shall not be held liable for any damages or criminal charges resulting from the utilization of this repo.
-- **This disclaimer applies to all branches of the repo, as well as other GitHub repositories and software authored by the developer subsequent to 10/22/2022.
+- - **The developer assumes no responsibility for any fraudulent activity resulting from the use of this software.
+- **This disclaimer applies to all branches of the repo, as well as other GitHub repositories and software authored by the developer.
 - **Any implementation of this repo is undertaken at the user's own risk. The developer shall not be held financially or criminally responsible for any consequences arising from its usage. Users are required to bear the developer's legal costs and any additional expenses incurred as a result of utilizing this software.
-- **The developer assumes no responsibility for any fraudulent activity resulting from the use of this software.
 - **The developer disclaims liability for the handling of information, including its reception, interaction, storage, viewing, processing, access, usage, creation, maintenance, transmission, disposal, or any other form of handling.
 - **The developer shall not be held liable for any costs, loss of income, or unforeseen consequences resulting from the use of this software. It should be noted that the implementation of this software was not performed by the developers. Any usage of this repo is restricted to the Users or contributors of said repo.
-- **The developer disclaims responsibility for any confidential, private, copyrighted, trademarked, or otherwise protected information contained within this repo.
-Ensuring compliance with applicable regulations, standards, legal requirements, statements of work, and third-party contracts is the sole responsibility of the user and not the developer.
-- **Prior to deploying this project in a production environment, it is strongly recommended to consult legal and compliance professionals, as well as a qualified third-party development team, to assess and address any compliance requirements.
+- **The developer disclaims responsibility for any confidential, private, copyrighted, trademarked, or otherwise protected information contained within this repo. 
+ - **Ensuring compliance with applicable regulations, standards, legal requirements, statements of work, and third-party contracts is the sole responsibility of the user and not the developer.
 - **The developer disclaims responsibility for any modifications made to closed-source software or any usage of illegally modified software, including the modification of payment software.
-- **User is required to  inform the developer of any document contradicting or undermining any of these disclaimers within 14 days of accessing this repo
-- **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential - **information.
+- **User is required to  inform the developer of any document contradicting or undermining any of these disclaimers  after reading this disclaimer. 
+- **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential  information.
 - **Users explicitly waive their right to file any legal claims or lawsuits against the Developer related to the use, implementation, or consequences of this software.
 - **Any changes to said repo must be approved by Developer in the form of a pull request
-- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users remove access to this software it will be pushed into the public domain and users will forfeit exclusive rights to said software 
+- **If the User subsidary of another company  company they must remove access to this repository. If a User accepts access to this repository they must email Developer cos30degrees@gmail.com
+- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users removes access from repository it will be pushed into the public domain and users will forfeit exclusive rights to said software 
 
 
 
