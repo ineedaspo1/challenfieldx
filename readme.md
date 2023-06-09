@@ -11,8 +11,7 @@ Chaz McGowan (chaz@uplasvegas.com)
 Jennifer Castrataro (jenn@fritzmartin.com)
 Leigh Newbigging (Leigh@myfieldx.com)
 Michael Hartman (Michael.p.hartman@gmail.com)
-Discussionforall@gmail.com
-admin@myfieldx.com
+3rd party contractor (Discussionforall@gmail.com)
 Becky Sullivan (becky@myfieldx.com)
 Project Developers include:
 Sean Baker (cos30degrees@gmail.com) (sean@paragonwebservice.com) (tan90degrees@gmail.com) (seancameronbaker@gmail.com) 
