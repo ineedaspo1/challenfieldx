@@ -50,7 +50,7 @@ to date.  Original Repository exists https://github.com/ineedaspo1/challenfieldx
 - **Regular backups**: Maintain regular backups of the entire WordPress site and database to recover in case of any issues or data loss.
 - **Test thoroughly**: Conduct thorough testing of the site's functionality, security, and performance before deploying it to a production environment.
 - **Report vulnerabilities**: If you discover any security vulnerabilities or issues, please report them responsibly to the project maintainers.
-- - **Any usage of this project**:  should not violate any contractual agreements or legal obligations it is the website ow.
+- - **Any usage of this project**:  should not violate any contractual agreements or legal obligations.
 
 
 ## Disclaimer
