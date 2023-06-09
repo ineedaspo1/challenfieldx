@@ -30,15 +30,13 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 
 
 ## Usage
-
-- Access the site by visiting `http://localhost/` or your configured domain.
-- Log in with the provided admin credentials (username: admin, password: password).
+.
 - Explore the available eLearning features and functionalities.
 - Customize the site content, courses, lessons, and quizzes as needed.
 - Please note that some features may be incomplete or require further development.
 
 
-## Security and Protecting Developers
+## Security and Developer Release of Liability 
 
 - **Keep the site private during development**: Limit access to the site during development by using password protection or IP whitelisting to prevent unauthorized access.
 - **Implement secure development practices**: Follow secure coding practices, including input validation, proper user authentication, and protecting against common vulnerabilities like SQL injection and cross-site scripting (XSS).
