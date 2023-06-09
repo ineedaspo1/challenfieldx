@@ -9,7 +9,7 @@ Regrettably, during the development of this project, security breaches were dete
 
 - **This GitHub repository (hereafter referred to as "repo") is provided "as-is" without any warranties, express or implied. The developer explicitly disclaims all implied warranties, including any warranty of merchantability and fitness. 
 - **The developer shall not be held liable for any consequences arising from the use of this repo, including non-compliance with specific regulations or standards.
-- **The developer assumes no responsibility for any usage of the repo that involves copyrighted materials under their ownership prior to 10/22/2022.
+- **The developer assumes no responsibility for any usage of the repo that involves copyrighted materials under their ownership subsequent to 10/22/2022.
 - **Any damages covered by Merchant Fraud Insurance and Errors and Omissions insurance are exempted from the developer's responsibility.
 - **The developer shall not be held liable for any damages or criminal charges resulting from the utilization of this repo.
 - **This disclaimer applies to all branches of the repo, as well as other GitHub repositories and software authored by the developer prior to 10/22/2022.
