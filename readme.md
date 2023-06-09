@@ -1,8 +1,13 @@
 # WordPress eLearning Site 
 
+It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is in the development phase, this is do to security bugs found in the paid memberships pro software these patches have not yet been released so use of this software is not reccomended until such time see https://github.com/strangerstudios/paid-memberships-pro/pull/2468, the security bug was detected by by the repository contributors during development. 
+to date.  Original Repository exists at https://github.com/ineedaspo1/challenfieldx. 
+
+
 Project contributors include Sharyn Jaime Frtiz (jamie@fritzmartin.com), Chaz Mcgowan chaz@uplasvegas.com, Jennifer Castrataro, jenn@fritzmartin.com, Leigh Newbigging Leigh@myfieldx.com, Michael Hartman (Michael.p.hartman@gmail.com), Discussionforall@gmail.com, admin@myfieldx.com, becky sullivan (becky@myfieldx.com). During the development of this site 12 different I.P addresses were logged using the site as administrators,  they are stored on a secure location, I.Ps logged before the first launch in January are also stored in a secure location. 
 
-Regrettably, during the development of this project, security breaches were detected, and unauthorized modifications were made to certain files. Since the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not receiving compensation during this period, and as there is no existing documentation or contracts signed by the developer.  As per copyright law, the author of a line of software code is generally considered the copyright owner. Consequently, these circumstances could potentially expose Sean Baker to substantial liability and legal action due to undisclosed third-party contractual agreements and related documentation. In order to address these concerns adequately, the following disclaimers must be provided. For the purpose of this discussion, the term 'Developer' refers to Sean Baker." and User refers to Contributors of repository If any Contributor is not Fieldxperience LLC they are required to notify Developer immediatly. 
+
+Regrettably, during the development of this project, security breaches were detected as outlined above, and unauthorized modifications were made to certain files. Since the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not receiving compensation during this period, and as there is no existing documentation or contracts signed by the developer.  As per copyright law, the author of a line of software code is generally considered the copyright owner. Consequently, these circumstances could potentially expose Sean Baker to substantial liability and legal action due to undisclosed third-party contractual agreements and related documentation. In order to address these concerns adequately, the following disclaimers must be provided. For the purpose of this discussion, the term 'Developer' refers to Sean Baker." and User refers to Contributors of repository If any Contributor is not Fieldxperience LLC they are required to notify Developer immediatly. 
 
 
 ## Disclaimer And Legal Requirements
@@ -29,8 +34,7 @@ Regrettably, during the development of this project, security breaches were dete
 
 
 
-It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is in the development phase, this is do to security bugs found in the paid memberships pro software these patches have not yet been released so use of this software is not reccomended until such time see https://github.com/strangerstudios/paid-memberships-pro/pull/2468, the security bug was detected by by the repository contributors during development. 
-to date.  Original Repository exists at https://github.com/ineedaspo1/challenfieldx. 
+
 ## Features
 
 - Basic eLearning functionalities.
