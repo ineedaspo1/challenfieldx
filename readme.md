@@ -1,10 +1,6 @@
-# WordPress eLearning Site (Incomplete)
+# WordPress eLearning Site 
 
-This is an  WordPress eLearning site created as an option for future use by fieldxperience LLC. 
-Aka hello@myfieldx.com
-(404) 981-1964
-285 West Wieuca Road NE #5547​,
-Atlanta, GA 30342​
+
 
 It contains a eduma based theme  and the ability to interface with brightspace through saml. Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is still under development and will probably take a full time job just to keep the current code up
 to date.  
