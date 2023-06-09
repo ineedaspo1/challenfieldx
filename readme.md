@@ -69,5 +69,5 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 
 ## License
 
-- These projects components are licensed under a variety of different licensed and therefore the unique ip has not been licensed yet and will require. The repositories owner can decide to place a license 
+- These projects components are licensed under a variety of different licensed and therefore the unique ip has not been licensed yet and will require.
 - on the repo if they intent to use it for commercial purposes. 
