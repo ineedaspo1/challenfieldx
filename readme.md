@@ -1,5 +1,32 @@
 # WordPress eLearning Site 
 
+Project contributors include Sharyn Jaime Frtiz (jamie@fritzmartin.com), Chaz Mcgowan chaz@uplasvegas.com, Jennifer Castrataro, jenn@fritzmartin.com, Leigh Newbigging Leigh@myfieldx.com, Michael Hartman (Michael.p.hartman@gmail.com), Discussionforall@gmail.com, admin@myfieldx.com, becky sullivan (becky@myfieldx.com). During the development of this site 12 different I.P addresses were logged using the site as administrators,  they are stored on a secure location, I.Ps logged before the first launch in January are also stored in a secure location. 
+
+Unfortunately during the development of this project security breaches were detected and files were modified that should not have been modified, since the repo contributor paragonsean\ineedaspo1 (sean baker) was not being compensated during this time and has no documentation discussing the ownership of ip, it unfortunately  Under copyright law, the author of a line of software code is the owner of the copyright. As this opens Sean Baker to massive liability and or possible lawsuits due to third party contractual agreements and or documentation he is unaware of, the following disclaimers must be given. Developers refers to Sean Baker. 
+
+
+## Disclaimer And Legal Requirements
+
+- **This GitHub repository (hereafter referred to as "repo") is provided "as-is" without any warranties, express or implied. The developer explicitly disclaims all implied warranties, including any warranty of merchantability and fitness. 
+- **The developer shall not be held liable for any consequences arising from the use of this repo, including non-compliance with specific regulations or standards.
+- **The developer assumes no responsibility for any usage of the repo that involves copyrighted materials under their ownership prior to 10/22/2022.
+- **Any damages covered by Merchant Fraud Insurance and Errors and Omissions insurance are exempted from the developer's responsibility.
+- **The developer shall not be held liable for any damages or criminal charges resulting from the utilization of this repo.
+- **This disclaimer applies to all branches of the repo, as well as other GitHub repositories and software authored by the developer prior to 10/22/2022.
+- **Any implementation of this repo is undertaken at the user's own risk. The developer shall not be held financially or criminally responsible for any consequences arising from its usage. Users are required to bear the developer's legal costs and any additional expenses incurred as a result of utilizing this software.
+- **The developer assumes no responsibility for any fraudulent activity resulting from the use of this software.
+- **The developer disclaims liability for the handling of information, including its reception, interaction, storage, viewing, processing, access, usage, creation, maintenance, transmission, disposal, or any other form of handling.
+- **The developer shall not be held liable for any costs, loss of income, or unforeseen consequences resulting from the use of this software. It should be noted that the implementation of this software was not performed by the developers. Any usage of this repo is restricted to Fieldxperience LLC.
+- **The developer disclaims responsibility for any confidential, private, copyrighted, trademarked, or otherwise protected information contained within this repo.
+Ensuring compliance with applicable regulations, standards, legal requirements, statements of work, and third-party contracts is the sole responsibility of the user and not the developer.
+- **Prior to deploying this project in a production environment, it is strongly recommended to consult legal and compliance professionals, as well as a qualified third-party development team, to assess and address any compliance requirements.
+- **The developer disclaims responsibility for any modifications made to closed-source software or any usage of illegally modified software, including the modification of payment software.
+- **Fieldxperience LLC is required to  inform the developer of any document contradicting or undermining any of these disclaimers within 14 days of reading this document. 
+- **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential - **information.
+- **If any changes to said repo must be approved by Developer
+- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . If users remove access to this softwar it will be pushed into the public domain and users will forfeit exclusive rights to said software 
+
+
 
 
 It contains a eduma based theme  and the ability to interface with brightspace through saml. Custom support ticket integration with slack, automatic addition of sso users, Please note that this projects payment system has undergone alot of updates recently and should not be used unless througly tested, currently some of the plugins including paid memberships pro and advanced custom fields have known vulnerabilities. The project is for the most part  is in the development phase, this is do to security bugs found in the paid memberships pro software these patches have not yet been released so use of this software is not reccomended until such time see https://github.com/strangerstudios/paid-memberships-pro/pull/2468, the security bug was detected by by the repository contributors during development. 
@@ -49,19 +76,7 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 
 
 
-## Disclaimer
 
-- This wordpress based  eLearning site is provided as-is.
-- Use this site at your own risk.
-- The developers are not responsible for any issues, vulnerabilities, or damages that may occur while using this site.
- - Developers are not responsible for any fraudulent activity and do not codone the usage of this site. 
- - It is recommended to implement additional security measures, thoroughly review and test the code, and ensure compatibility with existing regulations and or contractuactual stipulations before deploying it to a production environment.
-- The developers are not responsible for any data collected using this software and are not responsible for any licenses or private information that got put in the code, the contributors of this github did not add oauth keys, stripe keys or any other kind of api key that information should be stored seperately  it is recommended you rotate all software keys before using this software. 
-- It is your responsibility to ensure compliance with applicable regulations, standards, and legal requirements if you choose to use this project.
-- The developers disclaim any liability and assume no responsibility for any consequences resulting from the use of this project, including non-compliance with any specific regulations or standards.
-- It is recommended to consult with legal and compliance professionals as well as a qualified third party development team to assess and address any compliance requirements before deploying this project in a production environment.
--Developers are not responsible for any modification software that is closed source, any usage of illegaly modified software including modification of payment software. 
--Developers are not responsible for any kind of items found in this repo related to private, copyright, trademark or confidential information
 
 ## Contributing
 
@@ -70,5 +85,6 @@ to date.  Original Repository exists at https://github.com/ineedaspo1/challenfie
 
 ## License
 
-- These projects components are licensed under a variety of different licensed and therefore the unique ip has not been licensed yet and will require require a complex licensing structure as alot of software on this site is liscened differently, several plugins and themes have been modified extensively. 
-- on the repo if they intent to use it for commercial purposes. 
+- These projects components are licensed under a variety of different licenses and therefore the unique ip has not been licensed yet and will require require a complex licensing structure as alot of software on this site is liscened differently, several plugins and themes have been modified extensively. 
+-Any use of this software by fieldxperience LLC or any other entity requires extensive modification on the repo or in their own development enviroment id they intend to use it for commercial purposes. 
+
