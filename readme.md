@@ -6,18 +6,11 @@ Repository exists at https://github.com/ineedaspo1/challenfieldx.
 Project contributors include:
 Project contributors include:
 
-Sharyn Jaime Fritz (jamie@fritzmartin.com)
-Chaz McGowan (chaz@uplasvegas.com)
-Jennifer Castrataro (jenn@fritzmartin.com)
-Leigh Newbigging (Leigh@myfieldx.com)
-Michael Hartman (Michael.p.hartman@gmail.com)
-3rd party contractor (Discussionforall@gmail.com)
-Becky Sullivan (becky@myfieldx.com)
-Project Developers include:
+
 Sean Baker (cos30degrees@gmail.com) (sean@paragonwebservice.com) (tan90degrees@gmail.com) (seancameronbaker@gmail.com) 
 
 
-Regrettably, during the course of this project's development, security breaches were detected, as previously outlined, resulting in unauthorized modifications to specific files. It is important to note that the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not remunerated during this period, and no documentation or contracts exist to establish ownership or legal responsibilities. Under copyright law, the author of a line of software code is generally recognized as the copyright owner. Consequently, these circumstances potentially expose Sean Baker to significant liability and legal action. To adequately address these concerns, it is necessary to provide the following disclaimers. For the purposes of this discussion, the term 'Developer' refers to Sean Baker. Moreover, 'User' denotes the contributors of the repository. In the event that any contributor is not a representive of Fieldxperience LLC, they are required to promptly notify the Developer. It is essential to emphasize that this project is exclusively intended for use within Fieldxperience LLC. Considering recent statements from fieldxperience llc that they may abandon the project and considering the fact that the developers verbal contract with the contracting company was broken by febuary due to delays and additional requests the developer will retain ownership in the event that fieldxperience LLC takes down their website or it  becomes  unusable, during such a period he will contact the representive in this repository and  give them a 60 day period to fix the site. all communications will occur via email between the developer and a representive of fieldxperience. Any changes to this document after it is signed will not be binding unless aknowledged by the other with an update of their signature. Both paries will sign below the disclaimer and legal requirements
+Regrettably, during the course of this project's development, security breaches were detected, as previously outlined, resulting in unauthorized modifications to specific files. It is important to note that the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not remunerated during this period, and no documentation or contracts exist to establish ownership or legal responsibilities. Under copyright law, the author of a line of software code is generally recognized as the copyright owner. Consequently, these circumstances potentially expose Sean Baker to significant liability and legal action. To adequately address these concerns, it is necessary to provide the following disclaimers.
 
 
 ## Disclaimer And Legal Requirements
@@ -38,8 +31,8 @@ Regrettably, during the course of this project's development, security breaches 
 - **The developer shall not be held responsible for any kind of items contained within this repo that may involve private, copyrighted, trademarked, or confidential  information.
 - **Users explicitly waive their right to file any legal claims or lawsuits against the Developer related to the use, implementation, or consequences of this software.
 - **Any changes to said repo must be approved by Developer in the form of a pull request until such time as the document is signed by adding their name at the bottom of this document
-- **If the User subsidary of another company  company they must remove access to this repository. If a User accepts access to this repository they must email Developer cos30degrees@gmail.com
-- **By accepting access to this repo, all users implicitly agree to the terms and conditions stated above . User can add their name below to aknowledge they understand and accept these terms, user is required to be an agent or representive of  fieldxperience LLC. If users removes access from repository it will be pushed into the public domain and users will forfeit exclusive rights to said software . 
+
+
 
 
 _________________________
