@@ -7,7 +7,6 @@ Project contributors include:
 Project contributors include:
 
 
-Sean Baker (cos30degrees@gmail.com) (sean@paragonwebservice.com) (tan90degrees@gmail.com) (seancameronbaker@gmail.com) 
 
 
 Regrettably, during the course of this project's development, security breaches were detected, as previously outlined, resulting in unauthorized modifications to specific files. It is important to note that the repo contributor paragonsean\ineedaspo1 (Sean Baker) was not remunerated during this period, and no documentation or contracts exist to establish ownership or legal responsibilities. Under copyright law, the author of a line of software code is generally recognized as the copyright owner. Consequently, these circumstances potentially expose Sean Baker to significant liability and legal action. To adequately address these concerns, it is necessary to provide the following disclaimers.
